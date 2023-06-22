@@ -1,0 +1,93 @@
+.nav-list > li > a > .menu-icon {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 2px;
+    min-width: 60px;
+    text-align: center;
+    vertical-align: sub;
+}
+
+.nav-list > li > a {
+    font-size: 13px;
+    text-align: center;
+    text-shadow: none !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: left;
+}
+
+.left {
+    text-align: left;
+}
+
+.small-box {
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    color: #fff;
+}
+
+.small-box > .inner {
+    padding: 10px;
+}
+
+.small-box h3 {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.small-box p {
+    font-size: 15px;
+}
+
+.small-box .icon {
+    color: rgba(0, 0, 0, 0.15);
+    font-size: 90px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    transition: all 0.3s linear 0s;
+    z-index: 0;
+}
+
+.small-box > .small-box-footer {
+    background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.bg-aqua {
+    background-color: #6fb3e0 !important;
+}
+
+.bg-blue {
+    background-color: #428bca !important;
+}
+
+.bg-green {
+    background-color: #87b87f !important;
+}
+
+.bg-yellow {
+    background-color: #ffb752 !important;
+}
+
+.bg-red {
+    background-color: #d15b47 !important;
+}
