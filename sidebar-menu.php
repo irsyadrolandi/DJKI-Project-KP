@@ -51,7 +51,7 @@ if ($_SESSION['hak_akses']=='Super Admin'){ ?>
         echo '  <li class="active">
                     <a href="?module=report">
                         <i class="menu-icon fa fa-print"></i>
-                        <span class="menu-text">report</span>
+                        <span class="menu-text">Report</span>
                     </a>
                     <b class="arrow"></b>
                 </li>';
@@ -61,7 +61,7 @@ if ($_SESSION['hak_akses']=='Super Admin'){ ?>
         echo '  <li>
                     <a href="?module=report">
                         <i class="menu-icon fa fa-print"></i>
-                        <span class="menu-text">report</span>
+                        <span class="menu-text">Report</span>
                     </a>
                     <b class="arrow"></b>
                 </li>';
@@ -72,7 +72,7 @@ if ($_SESSION['hak_akses']=='Super Admin'){ ?>
         echo '  <li class="active">
                     <a href="?module=user">
                         <i class="menu-icon fa fa-user"></i>
-                        <span class="menu-text">user</span>
+                        <span class="menu-text">User</span>
                     </a>
                     <b class="arrow"></b>
                 </li>';

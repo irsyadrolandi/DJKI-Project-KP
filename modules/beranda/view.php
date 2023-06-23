@@ -159,7 +159,7 @@ tiket")
                     plotShadow: false
                  },   
                  title: {
-                    text: 'OPEN TIKET '
+                    text: 'Tiket Terbuka '
                  },
                  tooltip: {
                     formatter: function() {
@@ -230,7 +230,7 @@ GROUP BY 1");
                     plotShadow: false
                  },   
                  title: {
-                    text: 'CLOSED TIKET '
+                    text: 'Tiket Selesai '
                  },
                  tooltip: {
                     formatter: function() {
@@ -292,7 +292,7 @@ GROUP BY 1");
                     <i class="ace-icon fa fa-user"></i>
                 </button>
                 <i class="ace-icon fa fa-user green"></i>
-                Graph
+                Grafik
                
             </div>
         </div>
