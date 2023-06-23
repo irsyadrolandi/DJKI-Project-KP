@@ -48,6 +48,14 @@ if ($_GET['form']=='add') { ?>
 					</div>
 
 					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right">Departemen</label>
+
+						<div class="col-sm-9">
+							<input type="text" class="col-xs-12 col-sm-6" name="Departemen" autocomplete="off" required />
+						</div>
+					</div>
+
+					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right">Nama User</label>
 
 						<div class="col-sm-9">
@@ -132,6 +140,14 @@ elseif ($_GET['form']=='edit') {
 
 						<div class="col-sm-9">
 							<input type="password" class="col-xs-12 col-sm-6" name="password" placeholder="Kosongkan password jika tidak diubah" autocomplete="off" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right">Departemen</label>
+
+						<div class="col-sm-9">
+							<input type="text" class="col-xs-12 col-sm-6" name="Departemen" autocomplete="off" value="<?php echo $data['Departemen']; ?>" required />
 						</div>
 					</div>
 

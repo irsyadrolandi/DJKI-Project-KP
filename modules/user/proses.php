@@ -16,12 +16,13 @@ else {
             // ambil data hasil submit dari form
             $username  = mysqli_real_escape_string($mysqli, trim($_POST['username']));
             $password  = md5(mysqli_real_escape_string($mysqli, trim($_POST['password'])));
+            $Departemen = mysqli_real_escape_string($mysqli, trim($_POST['Departemen']));
             $nama_user = mysqli_real_escape_string($mysqli, trim($_POST['nama_user']));
               $hak_akses = mysqli_real_escape_string($mysqli, trim($_POST['hak_akses']));
 
             // perintah query untuk menyimpan data ke tabel user
-            $query = mysqli_query($mysqli, "INSERT INTO user(username,password,nama_user,hak_akses)
-                                            VALUES('$username','$password','$nama_user','$hak_akses')")
+            $query = mysqli_query($mysqli, "INSERT INTO user(username,password,Departemen,nama_user,hak_akses)
+                                            VALUES('$username','$password','$Departemen','$nama_user','$hak_akses')")
                                             or die('Ada kesalahan pada query insert : '.mysqli_error($mysqli));    
 
             // cek query
@@ -39,6 +40,7 @@ else {
                 $id_user   = mysqli_real_escape_string($mysqli, trim($_POST['id']));
                 $username  = mysqli_real_escape_string($mysqli, trim($_POST['username']));
                 $password  = md5(mysqli_real_escape_string($mysqli, trim($_POST['password'])));
+                $Departemen = mysqli_real_escape_string($mysqli, trim($_POST['Departemen']));
                 $nama_user = mysqli_real_escape_string($mysqli, trim($_POST['nama_user']));
                  $hak_akses = mysqli_real_escape_string($mysqli, trim($_POST['hak_akses']));
 
@@ -46,6 +48,7 @@ else {
                 if (empty($_POST['password'])) {
                     // perintah query untuk mengubah data pada tabel user
                     $query = mysqli_query($mysqli, "UPDATE user SET username    = '$username',
+                                                                        Departemen  = '$Departemen',
                                                                         nama_user   = '$nama_user',
                                                                         hak_akses = '$hak_akses'
                                                                   WHERE id_user     = '$id_user'")
@@ -62,6 +65,7 @@ else {
                     // perintah query untuk mengubah data pada tabel user
                     $query = mysqli_query($mysqli, "UPDATE user SET username   = '$username',
                                                                         password   = '$password',
+                                                                        Departemen  = '$Departemen',
                                                                         nama_user  = '$nama_user',
                                                                          hak_akses = '$hak_akses'
                                                                   WHERE id_user    = '$id_user'")
