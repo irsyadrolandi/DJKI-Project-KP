@@ -5,7 +5,7 @@ error_reporting(0);
 <div class="page-content">
     <div class="page-header">
         <h4>
-            HELPDESK SUPPORT SYSTEM
+            Helpdesk Infrastruktur
         </h4>
     </div><!-- /.page-header -->
     <div class="row">
@@ -19,7 +19,7 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
                 </button>
                 <i class="ace-icon fa fa-user green"></i>
                 Selamat datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di HELPDESK SUPPORT
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->
@@ -41,7 +41,7 @@ FROM
 tiket WHERE status='Open'")
 
 
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+            or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);
 
@@ -51,13 +51,13 @@ tiket WHERE status='Open'")
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket Open</p>
+                    <p>Tiket Terbuka</p>
                     
                 </div>
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></a>
             </div>
         </div>
 
@@ -76,7 +76,7 @@ FROM
 tiket WHERE status='Closed'")
 
 
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+        or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);
 
@@ -86,13 +86,13 @@ tiket WHERE status='Closed'")
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket CLosed</p>
+                    <p>Tiket Selesai</p>
                     
                 </div>
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></a>
             </div>
         </div>
         <div class="col-lg-3 col-xs-6">
@@ -110,7 +110,7 @@ FROM
 tiket")
 
 
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+        or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);
 
@@ -126,7 +126,7 @@ tiket")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></a>
             </div>
         </div>
     </div>
@@ -361,7 +361,7 @@ tiket WHERE status='Open' and id_user='$user'")
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket Open</p>
+                    <p>Tiket Terbuka</p>
                     
                 </div>
                 <div class="icon">
@@ -396,7 +396,7 @@ tiket WHERE status='Closed' and id_user='$user'")
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket CLosed</p>
+                    <p>Tiket Selesai</p>
                     
                 </div>
                 <div class="icon">
@@ -418,9 +418,7 @@ tiket WHERE status='Closed' and id_user='$user'")
   
 FROM
 tiket where id_user='$user'")
-
-
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+     or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);
 
@@ -489,8 +487,7 @@ elseif ($_SESSION['hak_akses']=='HELPDESK') { ?>
 FROM
 tiket WHERE status='Open'")
 
-
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+    or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);
 
@@ -500,7 +497,7 @@ tiket WHERE status='Open'")
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket Open</p>
+                    <p>Tiket Terbuka</p>
                     
                 </div>
                 <div class="icon">
@@ -523,19 +520,16 @@ tiket WHERE status='Open'")
   
 FROM
 tiket WHERE status='Closed'")
+    or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
-
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
-
-                $data = mysqli_fetch_assoc($query);
-
-                
+    $data = mysqli_fetch_assoc($query);
+   
                 ?>
 
                 <div class="inner">
 
                     <h3><?php echo $data['tiket']; ?></h3>
-                    <p>Total Tiket CLosed</p>
+                    <p>Tiket Selesai</p>
                     
                 </div>
                 <div class="icon">
@@ -559,11 +553,10 @@ FROM
 tiket")
 
 
-                                                or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
+    or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
-                $data = mysqli_fetch_assoc($query);
+    $data = mysqli_fetch_assoc($query);
 
-                
                 ?>
 
                 <div class="inner">

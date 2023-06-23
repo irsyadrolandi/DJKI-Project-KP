@@ -30,16 +30,15 @@
             <div class="box-body">
               
                <div class="form-group">
-                                            <label>Dari</label>
-                                            <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="dari" autocomplete="off" required>
-                                        </div>
-
-                                         <div class="form-group">
-                                            <label>Sampai</label>
-                                            <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="sampai" autocomplete="off" required>
-                                        </div>
-                                         <div class="form-group">
-                                        <input type="submit" class='btn btn-primary btn-sm' name="simpan" value="Cetak">
+                <label>Dari</label>
+                <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="dari" autocomplete="off" required>
+                    </div>
+                        <div class="form-group">
+                        <label>Sampai</label>
+                            <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" name="sampai" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class='btn btn-primary btn-sm' name="simpan" value="Cetak">
                                          <i style='color:#fff' class='glyphicon glyphicon-list'></i>
                                        
                                     </div>
@@ -76,16 +75,16 @@
                             <thead>
                                 <tr>
                                      <th class='center'>No</th>
-                                    <th class='center'>IDtiket</th>
+                                    <th class='center'>ID-Tiket</th>
                                     <th class='center'>Nama</th>
                                      <th class='center'>Departemen</th>
                                      <th class='center'>Email</th>
-                                       <th class='center'>Priority</th>
+                                       <th class='center'>Prioritas</th>
 
-                                       <th class="center" >Case</th>
+                                       <th class="center" >Kendala</th>
                                         <th class="center" >Status</th>
                                       
-                                        <th class='center'>Create Date</th>
+                                        <th class='center'>Tanggal Dibuat</th>
                                   
                                    
                                     
@@ -117,7 +116,7 @@ GROUP BY idtiket DESC
                                     <td width="100"><?php echo $data['nama']; ?></td>
                                      <td width="100"><?php echo $data['departemen']; ?></td>
                                      <td width="100"><?php echo $data['email']; ?></td>
-                                     <td width="100"><?php echo $data['priority']; ?></td>
+                                     <td width="100"><?php echo $data['prioritas']; ?></td>
                                       <td width="100"><?php echo $data['problem']; ?></td>
                                       <td width="100" style="background:<?php echo $warna; ?>">
                                     <?php echo $data['status']; ?></td>

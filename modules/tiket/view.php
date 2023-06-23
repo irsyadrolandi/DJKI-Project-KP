@@ -11,7 +11,7 @@
 <div class="page-content">
     <div class="page-header">
         <h1 style="color:#585858">
-            <i class="ace-icon fa fa-list"></i> List Tiket Support
+            <i class="ace-icon fa fa-list"></i> List Tiket Helpdesk
         </h1>
         <br>
         <br>
@@ -91,17 +91,17 @@ elseif ($_GET['alert'] == 6) { ?>
                             <thead>
                                 <tr>
                                      <th class='center'>No</th>
-                                    <th class='center'>IDtiket</th>
+                                    <th class='center'>ID-Tiket</th>
                                     <th class='center'>Nama</th>
                                      <th class='center'>Departemen</th>
                                      <th class='center'>Email</th>
-                                       <th class='center'>Priority</th>
+                                       <th class='center'>Prioritas</th>
 
-                                       <th class="center" >Case</th>
+                                       <th class="center" >Kendala</th>
                                         <th class="center" >Status</th>
                                          
                                         
-                                        <th class='center'>Create Date</th>
+                                        <th class='center'>Tanggal Dibuat</th>
                                   
                                    
                                     

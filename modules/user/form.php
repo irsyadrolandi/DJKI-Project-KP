@@ -59,9 +59,9 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required>
                     <option value=""></option>
-                   <option value="Super Admin">Admin</option>
-                   <option value="STAFF">STAFF</option>
-                      <option value="HELPDESK">HELPDESK</option>
+                   		<option value="Super Admin">Admin</option>
+                   		<option value="STAFF">Staff</option>
+                      	<option value="HELPDESK">Helpdesk</option>
                   </select>
                 </div>
               </div>
@@ -85,7 +85,7 @@ elseif ($_GET['form']=='edit') {
 	if (isset($_GET['id'])) {
 	    // fungsi query untuk menampilkan data dari tabel user
 	    $query = mysqli_query($mysqli, "SELECT * FROM user WHERE id_user='$_GET[id]'") 
-	    								or die('Ada kesalahan pada query tampil data ubah : '.mysqli_error($mysqli));
+	    	or die('Ada kesalahan pada query tampil data ubah : '.mysqli_error($mysqli));
 	    $data  = mysqli_fetch_assoc($query);
   	}
 ?>

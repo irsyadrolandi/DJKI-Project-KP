@@ -5,7 +5,7 @@
 			<a href="?module=beranda">Beranda</a>
 		</li>
 
-		<li class="active">User</li>
+		<li href="?module=user" class="active">User</li>
 	</ul><!-- /.breadcrumb -->
 </div>
 
@@ -15,7 +15,7 @@
 			<i style="margin-right:7px" class="ace-icon fa fa-user"></i> User
 			<a href="?module=form_user&form=add">
                 <button class="btn btn-primary pull-right">
-					<i class="ace-icon fa fa-plus"></i> Tambah
+					<i class="ace-icon fa fa-plus"></i> Tambah User
 				</button>
             </a>
 		</h1>

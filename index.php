@@ -48,7 +48,7 @@
 										<i class="ace-icon fa fa-times"></i>
 									</button>
 									<strong><i class="ace-icon fa fa-times-circle"></i> Gagal Login! </strong><br>
-									username atau password salah, cek kembali username dan password Anda.
+									Masukkan kembali username dan password Anda.
 									<br>
 								</div>
 							<?php
@@ -69,8 +69,7 @@
 				            ?>
 		<div class="container-login100">
 
-			<div class="login100-more" style="background-image: url('images/CS.png');"></div>
-
+			<div class="login100-more" style="background-image: url('images/logo-djki.png');"></div>
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form" action="login-check.php" method="POST">
 					<span class="login100-form-title p-b-59">
@@ -85,16 +84,11 @@
 						<span class="focus-input100"></span>
 					</div>
 
-				<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-						<input class="input100" type="password" name="password" placeholder="Password">
+					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Username is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 					</div>
-					
-
-					
-
-				
-
 							<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">
 							Sign in

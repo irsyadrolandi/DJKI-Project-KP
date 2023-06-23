@@ -99,13 +99,13 @@ session_start();      // memulai session
 					<span class="icon-bar"></span>
 				</button>
 
-				<div class="navbar-header pull-left">
+				<!--<div class="navbar-header pull-left">
 					<a href="index.html" class="navbar-brand">
 						<small>
-				HELPDESK
+				Helpdesk Infrastruktur
 						</small>
 					</a>
-				</div>
+				</div>-->
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
@@ -180,7 +180,7 @@ session_start();      // memulai session
 					<div class="footer-content">
 						<span class="bigger-120">
 							<marquee>&copy; 2023 -
-							<span class="red bolder">HELPDESK SUPPORT SYSTEM </span>
+							<span class="red bolder">AI AD </span>
 						</span></marquee>
 					</div>
 				</div>

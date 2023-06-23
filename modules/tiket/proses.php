@@ -52,13 +52,11 @@ else {
 
                
                     $query = mysqli_query($mysqli, "UPDATE tiket SET status               = '$status',
-                                                                     updateuser           = '$id_user', 
-                                                                     solveby              = '$id_user'     
+                         updateuser           = '$id_user', 
+                         solveby              = '$id_user'     
                                                                      
-                                                                        
-                                                                         
-                                                                   WHERE idtiket                   = '$idtiket'")
-                                                    or die('Ada kesalahan pada query update : '.mysqli_error($mysqli));
+                        WHERE idtiket                   = '$idtiket'")
+                        or die('Ada kesalahan pada query update : '.mysqli_error($mysqli));
 
                     // cek query
                     if ($query) {

@@ -27,13 +27,13 @@ if ($_GET['form']=='add') { ?>
             $id_user=$_SESSION['id_user'];
 
              $query = mysqli_query($mysqli, "SELECT * FROM user a where a.id_user='$id_user'")
-                                                or die('Ada kesalahan pada query tampil : '.mysqli_error($mysqli));
-                                                $data = mysqli_fetch_assoc($query);
+                or die('Ada kesalahan pada query tampil : '.mysqli_error($mysqli));
+                  $data = mysqli_fetch_assoc($query);
               
               $query_id = mysqli_query($mysqli, "SELECT RIGHT(idtiket,6) as kode FROM tiket
-                                                ORDER BY idtiket DESC LIMIT 1")
-                                                or die('Ada kesalahan pada query tampil id_barang : '.mysqli_error($mysqli));
-                                                $curr_year = date("Y");
+                ORDER BY idtiket DESC LIMIT 1")
+                  or die('Ada kesalahan pada query tampil id_barang : '.mysqli_error($mysqli));
+                    $curr_year = date("Y");
 
               $count = mysqli_num_rows($query_id);
 
@@ -49,11 +49,6 @@ if ($_GET['form']=='add') { ?>
               $idtiket = "TKT-$curr_year-$buat_id";
               ?>
 
-
-
-  
- 
-           
             <div class="form-group">
                 <label class="col-sm-2 control-label">ID-Tiket</label>
                 <div class="col-sm-5">
@@ -99,9 +94,7 @@ if ($_GET['form']=='add') { ?>
                    <option value="High">HIGH</option>
                     <option value="MEDIUM">MEDIUM</option>
                      <option value="STANDART">STANDART</option>
-
-                       
-                    
+  
                   </select>
                 </div>
               </div>
@@ -141,15 +134,10 @@ elseif ($_GET['form']=='edit') {
         
       // fungsi query untuk menampilkan data dari tabel barang
       $query = mysqli_query($mysqli, "SELECT * from tiket where idtiket='$_GET[id]'") 
-                                      or die('Ada kesalahan pada query tampil Data Vendor: '.mysqli_error($mysqli));
+        or die('Ada kesalahan pada query tampil Data Vendor: '.mysqli_error($mysqli));
       $data  = mysqli_fetch_assoc($query);
-                
-
-        
-            
+ 
       $user = $_SESSION['nama_user'];
-     
-      
     }
   
 ?>
@@ -221,11 +209,7 @@ elseif ($_GET['form']=='edit') {
                     <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
 
                    <option value="Open">OPEN</option>
-                    <option value="closed">CLOSED</option>
-                   
-
-                       
-                    
+                    <option value="closed">CLOSED</option>  
                   </select>
                 </div>
               </div>
@@ -235,19 +219,7 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <input type="text" class="form-control" name="problem" autocomplete="off" value="<?php echo $data['problem']; ?>" readonly>
                 </div>
-              </div>
-             
-            
-
-             
-
-               
-        
-       
-
-          
-
-          
+              </div>         
             
 </div>
             </div><!-- /.box body -->
@@ -270,12 +242,5 @@ elseif ($_GET['form']=='edit') {
   </section>
 
         <?php
-      }
-    
-
-
-
-
-
-     
+      }  
 ?>
