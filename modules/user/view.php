@@ -120,7 +120,6 @@ elseif ($_GET['alert'] == 4) { ?>
 									<td width="180" ><?php echo $data['nama_user']; ?></td>
 									<td width="100" ><?php echo $data['hak_akses']; ?></td>
 									<td width="100" ><?php echo $data['status']; ?></td>
-
 									<td width="70" class="center">
 										<div class="action-buttons">
 										<?php  

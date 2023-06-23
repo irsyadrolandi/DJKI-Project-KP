@@ -66,7 +66,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Departemen</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen'];?>" readonly>
+                  <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen'];?>">
                 </div>
               </div>
 
@@ -74,14 +74,14 @@ if ($_GET['form']=='add') { ?>
  <div class="form-group">
                 <label class="col-sm-2 control-label">Nama</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama_user'];?>" readonly>
+                  <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama_user'];?>">
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="email" autocomplete="off" value="<?php echo $data['email'];?>" readonly>
+                  <input type="text" class="form-control" name="email" autocomplete="off" value="<?php echo $data['email'];?>">
                 </div>
               </div>
                
