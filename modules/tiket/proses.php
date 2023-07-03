@@ -24,7 +24,7 @@ else {
              $id_user                = $_SESSION['id_user'];
            
                 $query = mysqli_query($mysqli, "INSERT INTO tiket(idtiket,departemen,nama,email,priority,problem,id_user,date) 
-                                            VALUES('$idtiket','$departemen','$nama','$email','$prio','$case','$id_user','$tanggal')")
+                    VALUES('$idtiket','$departemen','$nama','$email','$prio','$case','$id_user','$tanggal')")
                                                             or die('Ada kesalahan pada query insert : '.mysqli_error($mysqli));    
                 // cek query
                 if ($query) {

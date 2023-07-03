@@ -66,7 +66,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Departemen</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen'];?>">
+                  <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen'];?>" required>
                 </div>
               </div>
 
@@ -74,14 +74,14 @@ if ($_GET['form']=='add') { ?>
  <div class="form-group">
                 <label class="col-sm-2 control-label">Nama</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama_user'];?>">
+                  <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama_user'];?>" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="email" autocomplete="off" value="<?php echo $data['email'];?>">
+                  <input type="text" class="form-control" name="email" autocomplete="on" value="<?php echo $data['email'];?>" required>
                 </div>
               </div>
                
@@ -187,7 +187,7 @@ elseif ($_GET['form']=='edit') {
 
 
                <div class="form-group">
-                <label class="col-sm-2 control-label">Priority Case</label>
+                <label class="col-sm-2 control-label">Prioritas</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="prio" data-placeholder="-- Pilih --" autocomplete="On" disabled>
                     <option value="<?php echo $data['priority'];?>"><?php echo $data['priority'];?></option>
@@ -203,7 +203,7 @@ elseif ($_GET['form']=='edit') {
               </div>
 
                <div class="form-group">
-                <label class="col-sm-2 control-label">status</label>
+                <label class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
                     <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>

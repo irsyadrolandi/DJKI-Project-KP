@@ -328,8 +328,8 @@ elseif ($_SESSION['hak_akses']=='STAFF') { ?>
                     <i class="ace-icon fa fa-user"></i>
                 </button>
                 <i class="ace-icon fa fa-user green"></i>
-                Selamat datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di HELPDESK SUPPORT
+                Selamat Datang
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur, Laporkan Kendala Anda Pada Kami!
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->
@@ -367,7 +367,7 @@ tiket WHERE status='Open' and id_user='$user'")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></a>
             </div>
         </div>
 
@@ -402,7 +402,7 @@ tiket WHERE status='Closed' and id_user='$user'")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-xs-6">
@@ -434,7 +434,7 @@ tiket where id_user='$user'")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></i></a>
             </div>
         </div>
     </div>
@@ -503,7 +503,7 @@ tiket WHERE status='Open'")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></i></a>
             </div>
         </div>
 
@@ -535,7 +535,7 @@ tiket WHERE status='Closed'")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></i></a>
             </div>
         </div>
         <div class="col-lg-3 col-xs-6">
@@ -568,7 +568,7 @@ tiket")
                 <div class="icon">
                     <i class="fa fa-file"></i>
                 </div>
-                <a class="small-box-footer"><i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer"></i></a>
             </div>
         </div>
     </div>
