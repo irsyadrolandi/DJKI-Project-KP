@@ -4,9 +4,9 @@ error_reporting(0);
 ?>
 <div class="page-content">
     <div class="page-header">
-        <h4>
+        <h2>
             Helpdesk Infrastruktur
-        </h4>
+        </h2>
     </div><!-- /.page-header -->
     <div class="row">
     <?php
@@ -19,7 +19,7 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
                 </button>-->
                 <i class="ace-icon fa fa-user green"></i>
                 Selamat Datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur, Laporkan Kendala Anda pada Kami!
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur!
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->
@@ -460,13 +460,13 @@ tiket where id_user='$user'")
 elseif ($_SESSION['hak_akses']=='HELPDESK') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
-            <!--<div class="alert alert-block alert-success">
-                <button type="button" class="close" data-dismiss="alert">
+            <div class="alert alert-block alert-success">
+                <!--s<button type="button" class="close" data-dismiss="alert">
                     <i class="ace-icon fa fa-user"></i>
                 </button>-->
                 <i class="ace-icon fa fa-user green"></i>
                 Selamat Datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur, Laporkan Kendala Anda pada Kami!
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur!
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->

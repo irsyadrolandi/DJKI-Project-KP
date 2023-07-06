@@ -205,11 +205,11 @@ elseif ($_GET['form']=='edit') {
                <div class="form-group">
                 <label class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-                    <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
+                  <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="Off">
+                    <option value="<?php echo $data['status'];?>"></option>
 
-                   <option value="Open">OPEN</option>
-                    <option value="closed">CLOSED</option>  
+                    <option value="Open">Open</option>
+                    <option value="closed">Closed</option>  
                   </select>
                 </div>
               </div>
