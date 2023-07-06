@@ -29,7 +29,7 @@ if ($_GET['form']=='add') { ?>
 		<div class="row">
 			<div class="col-xs-12">
 				<!--PAGE CONTENT BEGINS-->
-				<form class="form-horizontal" role="form" action="modules/user/proses.php?act=insert" method="POST" />
+				<form class="form-horizontal" role="form" action="modules/user/proses.php?act=insert" method="POST">
 
 					<div class="form-group">
 						<label class="col-sm-2 control-label no-padding-right">Username</label>
