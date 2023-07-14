@@ -11,7 +11,7 @@
 <div class="page-content">
     <div class="page-header">
         <h1 style="color:#585858">
-            <i class="ace-icon fa fa-list"></i> List Tiket
+            <i class="ace-icon fa fa-list"></i> <b>List Tiket</b>
             <a href="?module=form_tiket&form=add">
                 <button class="btn btn-primary pull-right">
                     <i class="ace-icon fa fa-plus"></i> Tambah

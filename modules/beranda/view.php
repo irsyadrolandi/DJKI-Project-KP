@@ -4,9 +4,9 @@ error_reporting(0);
 ?>
 <div class="page-content">
     <div class="page-header">
-        <h4>
+        <h2>
             Helpdesk Infrastruktur
-        </h4>
+        </h2>
     </div><!-- /.page-header -->
     <div class="row">
     <?php
@@ -14,12 +14,12 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">
-                <button type="button" class="close" data-dismiss="alert">
-                    <i class="ace-icon fa fa-user"></i>
-                </button>
+                <!--<button type="button" class="close" data-dismiss="alert">
+                    <i class="ace-icon fa fa-user"></i> 
+                </button>-->
                 <i class="ace-icon fa fa-user green"></i>
-                Selamat datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur
+                Selamat Datang
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur!
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->
@@ -288,9 +288,9 @@ GROUP BY 1");
     </script>
     <div class="col-xs-12">
       <div class="alert alert-block alert-success">
-                <button type="button" class="close" data-dismiss="alert">
+                <!--<button type="button" class="close" data-dismiss="alert">
                     <i class="ace-icon fa fa-user"></i>
-                </button>
+                </button>-->
                 <i class="ace-icon fa fa-user green"></i>
                 Grafik
                
@@ -324,9 +324,9 @@ elseif ($_SESSION['hak_akses']=='STAFF') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">
-                <button type="button" class="close" data-dismiss="alert">
+                <!--<button type="button" class="close" data-dismiss="alert">
                     <i class="ace-icon fa fa-user"></i>
-                </button>
+                </button>-->
                 <i class="ace-icon fa fa-user green"></i>
                 Selamat Datang
                 <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur, Laporkan Kendala Anda Pada Kami!
@@ -461,12 +461,12 @@ elseif ($_SESSION['hak_akses']=='HELPDESK') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">
-                <button type="button" class="close" data-dismiss="alert">
+                <!--s<button type="button" class="close" data-dismiss="alert">
                     <i class="ace-icon fa fa-user"></i>
-                </button>
+                </button>-->
                 <i class="ace-icon fa fa-user green"></i>
-                Selamat datang
-                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di HELPDESK SUPPORT
+                Selamat Datang
+                <strong class="green"><?php echo $_SESSION['nama_user']; ?></strong> di Helpdesk Infrastruktur!
             </div>
             <!-- PAGE CONTENT ENDS -->
         </div><!-- /.col -->

@@ -197,16 +197,17 @@ elseif ($_GET['form'] == 'edit') {
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Status</label>
-            <div class="col-sm-5">
-              <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-                <option value="<?php echo $data['status']; ?>"><?php echo $data['status']; ?></option>
-                <option value="Open">OPEN</option>
-                <option value="Closed">CLOSED</option>
-              </select>
-            </div>
-          </div>
+               <div class="form-group">
+                <label class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-5">
+                  <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
+                    <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
+
+                   <option value="Open">OPEN</option>
+                    <option value="closed">CLOSED</option>  
+                  </select>
+                </div>
+              </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Problem</label>
