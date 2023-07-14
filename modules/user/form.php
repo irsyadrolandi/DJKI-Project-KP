@@ -35,7 +35,7 @@ if ($_GET['form']=='add') { ?>
 						<label class="col-sm-2 control-label no-padding-right">Username</label>
 
 						<div class="col-sm-9">
-							<input type="text" class="col-xs-12 col-sm-6" name="username" autocomplete="off" required />
+							<input type="text" class="col-xs-12 col-sm-6" name="username" autocomplete="off" required></textarea>
 						</div>
 					</div>
 
@@ -43,7 +43,7 @@ if ($_GET['form']=='add') { ?>
 						<label class="col-sm-2 control-label no-padding-right">Password</label>
 
 						<div class="col-sm-9">
-							<input type="password" class="col-xs-12 col-sm-6" name="password" autocomplete="off" required />
+							<input type="password" class="col-xs-12 col-sm-6" name="password" autocomplete="off" required></textarea>
 						</div>
 					</div>
 
@@ -59,13 +59,13 @@ if ($_GET['form']=='add') { ?>
 						<label class="col-sm-2 control-label no-padding-right">Nama User</label>
 
 						<div class="col-sm-9">
-							<input type="text" class="col-xs-12 col-sm-6" name="nama_user" autocomplete="off" required />
+							<input type="text" class="col-xs-12 col-sm-6" name="nama_user" autocomplete="off" required></textarea>
 						</div>
 					</div>
 					<div class="form-group">
                 <label class="col-sm-2 control-label">Hak Akses</label>
                 <div class="col-sm-5">
-                  <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required>
+                  <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required></textarea>
                     <option value=""></option>
                    		<option value="Super Admin">Admin</option>
                    		<option value="STAFF">Staff</option>
