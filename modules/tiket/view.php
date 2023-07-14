@@ -90,25 +90,19 @@ elseif ($_GET['alert'] == 6) { ?>
                                 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                     <th class='center'>No</th>
-                                    <th class='center'>ID-Tiket</th>
-                                    <th class='center'>Nama</th>
-                                     <th class='center'>Departemen</th>
-                                     <th class='center'>Email</th>
-                                       <th class='center'>Prioritas</th>
-
-                                       <th class="center" >Kendala</th>
-                                        <th class="center" >Status</th>
-                                         
-                                        
-                                        <th class='center'>Tanggal Dibuat</th>
-                                  
-                                   
-                                    
-                               <th class='center'>Action</th>
+                                <th class='center'>No</th>
+                                      <th class='center'>ID-Tiket</th>
+                                        <th class='center'>Nama</th>
+                                          <th class='center'>Departemen</th>
+                                            <th class='center'>Email</th>
+                                              <th class='center'>Prioritas</th>
+                                                <th class="center" >Kendala</th>
+                                                  <th class="center" >Status</th>
+                                                    <th class='center'>Tanggal Dibuat</th>
+                                                      <th class='center'>Action</th>
+                                                        
                                 </tr>
                             </thead>
-
                             <?php
                             $no = 1;
                            
@@ -134,7 +128,7 @@ GROUP BY idtiket DESC
                                       <td width="100"><?php echo $data['problem']; ?></td>
                                       <td width="100" style="background:<?php echo $warna; ?>">
                                     <?php echo $data['status']; ?></td>
-                                     
+                                    
                                      
                                      <td width="100"><?php echo $data['createdate']; ?></td>
                                  

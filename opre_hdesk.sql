@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 -- (See below for the actual view)
 --
 CREATE TABLE `grap` (
-`departemen` varchar(100)
-,`total` bigint(21)
+`departemen` varchar(100),
+`total` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -39,8 +39,8 @@ CREATE TABLE `grap` (
 -- (See below for the actual view)
 --
 CREATE TABLE `grap2` (
-`departemen` varchar(100)
-,`total` bigint(21)
+`departemen` varchar(100),
+`total` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -55,6 +55,7 @@ CREATE TABLE `tiket` (
   `nama` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `problem` varchar(100) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `status` enum('Open','Closed') NOT NULL DEFAULT 'Open',
   `date` date NOT NULL,
   `createdate` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -140,6 +141,10 @@ ALTER TABLE `user`
 ALTER TABLE `user`
   MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
 COMMIT;
+
+-- Adding the new column `foto` to the `tiket` table
+ALTER TABLE `tiket`
+ADD COLUMN `foto` varchar(100) NOT NULL AFTER `problem`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

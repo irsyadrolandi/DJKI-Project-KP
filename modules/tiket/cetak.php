@@ -48,7 +48,8 @@ GROUP BY idtiket DESC
               <td width="100"><?php echo $data['email']; ?></td>
                 <td width="100"><?php echo $data['priority']; ?></td>
                   <td width="100"><?php echo $data['problem']; ?></td>
-                    <td width="100" style="background:<?php echo $warna; ?>">
+                    <td width="100"><?php echo $data['foto']; ?></td>
+                      <td width="100" style="background:<?php echo $warna; ?>">
       <?php echo $data['status']; ?></td>
         <td width="100"><?php echo $data['createdate']; ?></td>
           <td class='center' width='30'>

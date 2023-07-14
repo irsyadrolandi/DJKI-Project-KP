@@ -88,22 +88,15 @@ elseif ($_GET['alert'] == 3) { ?>
                             <thead>
                                 <tr>
                                     <th class='center'>No</th>
-                                    <th class='center'>ID-Tiket</th>
-                                    <th class='center'>Nama</th>
-                                     <th class='center'>Departemen</th>
-                                     <th class='center'>Email</th>
-                                       <th class='center'>Prioritas</th>
-
-                                       <th class="center" >Kendala</th>
-                                        <th class="center" >Status</th>
-                                       
-                                        <th class='center'>Tanggal Dibuat</th>
-                                     
-                                    
-                                  
-                                   
-                                    
-                              
+                                      <th class='center'>ID-Tiket</th>
+                                        <th class='center'>Nama</th>
+                                          <th class='center'>Departemen</th>
+                                            <th class='center'>Email</th>
+                                              <th class='center'>Prioritas</th>
+                                                <th class="center" >Kendala</th>
+                                                  <th class="center" >Status</th>
+                                                    <th class='center'>Tanggal Dibuat</th>
+                                                      
                                 </tr>
                             </thead>
 
