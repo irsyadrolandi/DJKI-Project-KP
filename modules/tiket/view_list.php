@@ -95,7 +95,8 @@ elseif ($_GET['alert'] == 3) { ?>
                                               <th class='center'>Prioritas</th>
                                                 <th class="center" >Kendala</th>
                                                   <th class="center" >Status</th>
-                                                    <th class='center'>Tanggal Dibuat</th>
+                                                    <th class="center" >Foto</th>
+                                                        <th class='center'>Tanggal Dibuat</th>
                                                       
                                 </tr>
                             </thead>
@@ -126,29 +127,46 @@ GROUP BY idtiket DESC
                                      <td width="100"><?php echo $data['priority']; ?></td>
                                       <td width="100"><?php echo $data['problem']; ?></td>
                                       <td width="100"><?php echo $data['status']; ?></td>
+                                        <td style="width: 100px;">
+                                        <img src="{{ asset('assets/uploads/' . $data['nama_foto']) }}" alt="">
+                                         <button data-id="${data.id}" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editmodal">Lihat Foto</button></td>
 
+  
                                     
                                      <td width="100"><?php echo $data['createdate']; ?></td>
-                                 
-                                 
-                                        
-
-                                    
-                                    
-                                        </div>
-                                        </div>
-                                    </td>
                                 </tr>
-                            <?php
-                                $no++;
-                            } ?>
-                            </tbody>
-                        </table>
-                    
-
+                                <?php
+                                            $no++;
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
+<!-- Bagian modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabel">Foto</h3>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="imagePreview" src="" alt="" style="width: 450px">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

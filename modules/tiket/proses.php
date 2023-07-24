@@ -21,7 +21,7 @@ else {
             $id_user = $_SESSION['id_user'];
 
             // Proses upload foto
-            $direktorifoto = "../../assets/upload/";
+            $direktorifoto = "assets/uploads/";
             
             // Mengecek apakah direktori sudah ada
             if (!is_dir($direktorifoto)) {
@@ -31,14 +31,14 @@ else {
 
             $foto = $_FILES['foto']['name'];
             $foto_tmp = $_FILES['foto']['tmp_name'];
-            $direktoriFoto = $direktoriUpload . $foto;
+            $direktoriFoto = $direktorifoto . $foto;
             move_uploaded_file($foto_tmp, $direktoriFoto);
 
             // Set izin tulis pada direktori foto
             chmod($direktoriFoto, 0777);
 
             $query = mysqli_query($mysqli, "INSERT INTO tiket (idtiket, departemen, nama, email, priority, problem, id_user, date, foto)
-                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$case', '$id_user', '$tanggal', '$direktoriFoto')")
+                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$case', '$id_user', '$tanggal', '$direktorifoto')")
                 or die('Ada kesalahan pada query insert: ' . mysqli_error($mysqli));
 
             // cek query
