@@ -20,26 +20,49 @@ else {
             $tanggal = mysqli_real_escape_string($mysqli, trim($_POST['tanggal']));
             $id_user = $_SESSION['id_user'];
 
-            // Proses upload foto
-            $direktorifoto = "assets/uploads/";
-            
-            // Mengecek apakah direktori sudah ada
-            if (!is_dir($direktorifoto)) {
-                // Membuat direktori jika belum ada
-                mkdir($direktorifoto, 0777, true);
-            }
+         // Proses upload foto
+$direktorifoto = "assets/uploads/";
 
-            $foto = $_FILES['foto']['name'];
-            $foto_tmp = $_FILES['foto']['tmp_name'];
-            $direktoriFoto = $direktorifoto . $foto;
-            move_uploaded_file($foto_tmp, $direktoriFoto);
+// Mengecek apakah direktori sudah ada
+if (!is_dir($direktorifoto)) {
+    //Membuat direktori jika belum ada
+    mkdir($direktorifoto, 0777, true);
+}
 
+$foto = $_FILES['foto']['name'];
+$foto_tmp = $_FILES['foto']['tmp_name'];
+$direktoriFoto = $direktorifoto . $foto;
+
+// Mendapatkan informasi ekstensi file
+$file_extension = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
+
+// Mengecek apakah file foto berhasil diupload dan ekstensinya valid
+if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+    if (in_array($file_extension, array('jpg', 'jpeg', 'png'))) {
+        // Move uploaded file to destination directory with the original name
+        if (move_uploaded_file($foto_tmp, $direktoriFoto)) {
             // Set izin tulis pada direktori foto
             chmod($direktoriFoto, 0777);
 
+            // ...
+
             $query = mysqli_query($mysqli, "INSERT INTO tiket (idtiket, departemen, nama, email, priority, problem, id_user, date, foto)
-                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$case', '$id_user', '$tanggal', '$direktorifoto')")
+                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$case', '$id_user', '$tanggal', '$direktoriFoto')")
                 or die('Ada kesalahan pada query insert: ' . mysqli_error($mysqli));
+
+            // ...
+        } else {
+            echo "Gagal mengupload file foto.";
+        }
+    } else {
+        echo "Ekstensi file tidak valid. Hanya file JPG, JPEG, dan PNG yang diizinkan.";
+    }
+} else {
+    echo "Terjadi kesalahan dalam upload foto: " . $_FILES['foto']['error'];
+    exit;
+}
+
+
 
             // cek query
             if ($query) {

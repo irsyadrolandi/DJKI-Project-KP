@@ -127,12 +127,19 @@ GROUP BY idtiket DESC
                                      <td width="100"><?php echo $data['priority']; ?></td>
                                       <td width="100"><?php echo $data['problem']; ?></td>
                                       <td width="100"><?php echo $data['status']; ?></td>
-                                        <td style="width: 100px;">
-                                        <img src="{{ asset('assets/uploads/' . $data['nama_foto']) }}" alt="">
-                                         <button data-id="${data.id}" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editmodal">Lihat Foto</button></td>
-
-  
-                                    
+                                      <td class='center' width='100'>
+                                                    <div>
+                                                        <!-- Tambahkan kode untuk menampilkan gambar -->
+                                                        <?php
+                                                        $direktorifoto = "modules/tiket/" . $data['foto'];
+                                                        if (file_exists($direktorifoto)) {
+                                                            echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
+                                                        } else {
+                                                            echo '<span>Image not found' . $direktorifoto.'</span>';
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </td>
                                      <td width="100"><?php echo $data['createdate']; ?></td>
                                 </tr>
                                 <?php
@@ -150,23 +157,3 @@ GROUP BY idtiket DESC
     </div>
 </div>
 
-<!-- Bagian modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title fs-5" id="exampleModalLabel">Foto</h3>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="imagePreview" src="" alt="" style="width: 450px">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="script.js"></script>
-</body>
-</html>
