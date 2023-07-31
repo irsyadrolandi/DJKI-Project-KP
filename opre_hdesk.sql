@@ -149,3 +149,15 @@ ADD COLUMN `foto` varchar(100) NOT NULL AFTER `problem`;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+UPDATE pengguna
+SET hak_akses = 'Admin'
+WHERE hak_akses = 'Admin' OR hak_akses = 'Staff' OR hak_akses = 'Helpdesk';
+
+UPDATE pengguna
+SET hak_akses = 'User'
+WHERE hak_akses = 'User' OR hak_akses = 'User Lama';
+
+UPDATE pengguna
+SET hak_akses = 'Teknisi'
+WHERE hak_akses = 'Teknisi' OR hak_akses = 'Staff Baru';

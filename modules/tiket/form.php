@@ -62,7 +62,7 @@ if ($_GET['form'] == 'add') {
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Departemen</label>
+            <label class="col-sm-2 control-label">Bagian/Unit Kerja</label>
             <div class="col-sm-5">
               <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen']; ?>" required></textarea>
             </div>
@@ -76,26 +76,26 @@ if ($_GET['form'] == 'add') {
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Email</label>
+            <label class="col-sm-2 control-label">NIP</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="email" autocomplete="off" value="<?php echo $data['email']; ?>" required></textarea>
+              <input type="text" pattern="[-0-9]*" class="form-control" name="email" autocomplete="off" value="<?php echo $data['email']; ?>" required></textarea>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Priority Case</label>
+            <label class="col-sm-2 control-label">Prioritas Kendala</label>
             <div class="col-sm-5">
               <select class="chosen-select" name="prio" data-placeholder="-- Pilih --" autocomplete="On">
                 <option value=""></option>
-                <option value="High">HIGH</option>
-                <option value="MEDIUM">MEDIUM</option>
-                <option value="STANDART">STANDART</option>
+                <option value="High">High</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="STANDART">Standart</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Case</label>
+            <label class="col-sm-2 control-label">Kendala</label>
             <div class="col-sm-5">
               <textarea row="2" class="form-control" name="problem" autocomplete="off" value="<?php echo $data['email']; ?>" required></textarea>
             </div>
@@ -148,7 +148,7 @@ elseif ($_GET['form'] == 'edit') {
     <div class="page-header">
       <h1 style="color:#585858">
         <i style="margin-right: 5px" class="ace-icon fa fa-edit"></i>
-        Tiket Progress
+        Progres Tiket
       </h1>
     </div>
 
