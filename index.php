@@ -84,7 +84,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Username is required">
+					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Password is required">
 						<span class="label-input100">Password</span>
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
@@ -93,12 +93,16 @@
 						<button class="login100-form-btn" type="submit">
 							Sign in
 						</button>
-					</div>
+						
+						<div class="col-sm-offset-2 col-sm-10">
+            			<a href="" class="fa fa-file-text" aria-hidden="true" > Manual Book Helpdesk</a>
+       					 </div>
+					
 						<br>
 					</br>
 
 
-						
+						</div>
 					
 				</form>
 				

@@ -180,7 +180,7 @@ session_start();      // memulai session
 					<div class="footer-content">
 						<span class="bigger-120">
 							<marquee>&copy; 2023 -
-							<span class="red bolder">AI AD </span>
+							<span class="red bolder">Helpdesk Infrastruktur </span>
 						</span></marquee>
 					</div>
 				</div>
