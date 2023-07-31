@@ -204,6 +204,7 @@ elseif ($_GET['form'] == 'edit') {
                     <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
 
                    <option value="Open">OPEN</option>
+                   <option value="Pending">PENDING</option>
                     <option value="closed">CLOSED</option>  
                   </select>
                 </div>
