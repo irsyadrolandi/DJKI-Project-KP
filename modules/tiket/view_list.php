@@ -104,7 +104,7 @@ elseif ($_GET['alert'] == 3) { ?>
     $created_user = $_SESSION['id_user'];
     $query = mysqli_query($mysqli, "SELECT * FROM tiket where id_user='$created_user' GROUP BY idtiket DESC")
         or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
-      
+        while ($data = mysqli_fetch_assoc($query)) { 
 ?>
         <tr>
             <td width="10" class="center"><?php echo $no; ?></td>
@@ -115,59 +115,21 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['priority']; ?></td>
             <td width="100"><?php echo $data['problem']; ?></td>
             <td width="100"><?php echo $data['status']; ?></td>
-            <td class='center' width='100'>
-        
+            <td style="width: 100px;">
+                                        <img src="{{ asset('assets/uploads/' . $data['foto']) }}" alt="">
+                                         <button data-id="<?= $data['id'] ?>" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editmodal">Lihat Foto</button></td>
 
-            <div>
-            <!-- Tambahkan kode untuk menampilkan gambar -->
-                <?php
-                $direktorifoto = "modules/tiket/" . $data['foto'];
-                if (file_exists($direktorifoto)) {
-                    echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
-                } else {
-                    echo '<span>Image not found' . $direktorifoto.'</span>';
-                }
-                ?>
-            </div>
-            </td>
-            <td width="100"><?php echo $data['createdate']; ?></td>
+  
+                                    
+                                     <td width="100"><?php echo $data['createdate']; ?></td>
         </tr>
                                         <?php
 
-                            while ($data = mysqli_fetch_assoc($query)) { 
-                              
-                            ?>
-                          <tr>
-                                    <td width="10" class="center"><?php echo $no; ?></td>
-                                    
-                                    <td width="100"><?php echo $data['idtiket']; ?></td>
-                                    <td width="100"><?php echo $data['nama']; ?></td>
-                                     <td width="100"><?php echo $data['departemen']; ?></td>
-                                     <td width="100"><?php echo $data['email']; ?></td>
-                                     <td width="100"><?php echo $data['priority']; ?></td>
-                                      <td width="100"><?php echo $data['problem']; ?></td>
-                                      <td width="100"><?php echo $data['status']; ?></td>
-                                      <td class='center' width='100'>
-                                                    <div>
-                                                        <!-- Tambahkan kode untuk menampilkan gambar -->
-                                                        <?php
-                                                        $direktorifoto = "modules/tiket/" . $data['foto'];
-                                                        if (file_exists($direktorifoto)) {
-                                                            echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
-                                                        } else {
-                                                            echo '<span>Image not found </span>';
-                                                        }
-                                                        ?>
-                                                    </div>
-                                                </td>
-                                     <td width="100"><?php echo $data['createdate']; ?></td>
-                                </tr>
-                                <?php
+            $no++;
 
-                                            $no++;
-                                        }
-                                        ?>
-                                    </tbody>
+        }
+
+        ?>
                                 </table>
                             </div>
                         </div>
