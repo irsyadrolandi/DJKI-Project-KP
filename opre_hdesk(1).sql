@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 04:51 AM
+-- Generation Time: Aug 01, 2023 at 06:41 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- (See below for the actual view)
 --
 CREATE TABLE `grap` (
-`departemen` varchar(100)
+`priority` varchar(100)
 ,`total` bigint(21)
 );
 
@@ -46,17 +46,6 @@ CREATE TABLE `grap2` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `grap3`
--- (See below for the actual view)
---
-CREATE TABLE `grap3` (
-`priority` varchar(100)
-,`total` bigint(21)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tiket`
 --
 
@@ -67,7 +56,7 @@ CREATE TABLE `tiket` (
   `email` varchar(100) NOT NULL,
   `problem` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `status` enum('Open','Closed') NOT NULL DEFAULT 'Open',
+  `status` enum('Open','Pending','Closed') NOT NULL DEFAULT 'Open',
   `date` date NOT NULL,
   `createdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_user` int(10) NOT NULL,
@@ -122,7 +111,7 @@ INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `departemen`
 --
 DROP TABLE IF EXISTS `grap`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap`  AS   (select `a`.`departemen` AS `departemen`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Open' group by 1)  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap`  AS   (select `a`.`priority` AS `priority`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Open' group by 1)  ;
 
 -- --------------------------------------------------------
 
@@ -132,15 +121,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `grap2`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap2`  AS   (select `a`.`departemen` AS `departemen`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Closed' group by 1)  ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `grap3`
---
-DROP TABLE IF EXISTS `grap3`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap3`  AS   (select `a`.`priority` AS `priority`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Open' group by 1)  ;
 
 --
 -- Indexes for dumped tables
