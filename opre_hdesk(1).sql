@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 04:28 AM
+-- Generation Time: Aug 01, 2023 at 04:51 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -46,6 +46,17 @@ CREATE TABLE `grap2` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `grap3`
+-- (See below for the actual view)
+--
+CREATE TABLE `grap3` (
+`priority` varchar(100)
+,`total` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tiket`
 --
 
@@ -56,7 +67,7 @@ CREATE TABLE `tiket` (
   `email` varchar(100) NOT NULL,
   `problem` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `status` enum('Open','Closed','Pending') NOT NULL DEFAULT 'Open',
+  `status` enum('Open','Closed') NOT NULL DEFAULT 'Open',
   `date` date NOT NULL,
   `createdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_user` int(10) NOT NULL,
@@ -71,10 +82,7 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
-('TKT-2023-000001', 'user', 'yeti', '12-34578', 'wetfood habis', 'assets/uploads/Timmy.png', 'Open', '2023-07-31', '2023-07-31 11:59:08', 277, '2023-07-31 11:59:08', 0, 'High', 0),
-('TKT-2023-000002', 'permeongan', 'tinky', '54321', 'snack habis', 'assets/uploads/Screenshot (3).png', 'Closed', '2023-07-31', '2023-07-31 12:01:17', 277, '2023-07-31 12:01:17', 0, 'MEDIUM', 0),
-('TKT-2023-000003', 'user', 'lili', '123456', 'banyak', 'assets/uploads/Screenshot 2023-03-16 214325.png', 'Open', '2023-07-31', '2023-07-31 15:22:46', 277, '2023-07-31 15:22:46', 0, 'MEDIUM', 0),
-('TKT-2023-000004', 'wleowleo', 'gery', '09876', 'gatel', 'assets/uploads/Screenshot 2023-03-16 210214.png', 'Pending', '2023-07-31', '2023-07-31 15:25:33', 277, '2023-07-31 15:25:33', 0, 'High', 0);
+('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Open', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0);
 
 -- --------------------------------------------------------
 
@@ -90,7 +98,7 @@ CREATE TABLE `user` (
   `departemen` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telepon` varchar(13) NOT NULL,
-  `hak_akses` enum('Admin','User','Teknisi') NOT NULL,
+  `hak_akses` enum('Super Admin','STAFF','HELPDESK') NOT NULL,
   `status` enum('aktif','blokir') NOT NULL DEFAULT 'aktif',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -101,12 +109,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `departemen`, `email`, `telepon`, `hak_akses`, `status`, `created_at`, `updated_at`) VALUES
-(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', '', 'aktif', '2023-06-22 01:12:14', '2023-06-22 01:12:14'),
-(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', '', 'aktif', '2023-06-22 03:37:16', '2023-06-22 03:37:16'),
-(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', '', 'aktif', '2023-06-22 03:37:48', '2023-06-22 03:37:48'),
-(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', 'admin', '', '', '', 'aktif', '2023-06-22 03:38:25', '2023-07-31 11:56:40'),
-(277, 'yeti', 'yeti', '202cb962ac59075b964b07152d234b70', 'user', '', '', '', 'aktif', '2023-07-31 11:57:11', '2023-07-31 11:57:11'),
-(278, 'tinky', 'tinky', '202cb962ac59075b964b07152d234b70', 'meong', '', '', '', 'aktif', '2023-07-31 11:57:32', '2023-07-31 15:51:25');
+(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', 'Super Admin', 'aktif', '2023-06-22 01:12:14', '2023-06-22 01:12:14'),
+(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:16', '2023-06-22 03:37:16'),
+(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:48', '2023-06-22 03:37:48'),
+(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', '', '', '', 'Super Admin', 'aktif', '2023-06-22 03:38:25', '2023-06-22 03:38:25'),
+(277, 'user', 'user', '202cb962ac59075b964b07152d234b70', 'mahasiswa', '', '', 'STAFF', 'aktif', '2023-07-28 10:16:34', '2023-07-28 10:16:34');
 
 -- --------------------------------------------------------
 
@@ -125,6 +132,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `grap2`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap2`  AS   (select `a`.`departemen` AS `departemen`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Closed' group by 1)  ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `grap3`
+--
+DROP TABLE IF EXISTS `grap3`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap3`  AS   (select `a`.`priority` AS `priority`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Open' group by 1)  ;
 
 --
 -- Indexes for dumped tables
@@ -151,7 +167,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
+  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
