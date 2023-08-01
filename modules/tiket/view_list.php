@@ -88,7 +88,11 @@ elseif ($_GET['alert'] == 3) { ?>
                                     <th class='center'>No</th>
                                       <th class='center'>ID-Tiket</th>
                                         <th class='center'>Nama</th>
+<<<<<<< HEAD
                                           <th class='center'>Bidang/Unit Kerja</th>
+=======
+                                          <th class='center'>Unit Kerja</th>
+>>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
                                             <th class='center'>NIP</th>
                                               <th class='center'>Jenis Kendala</th>
                                                 <th class="center" >Kendala</th>
@@ -118,6 +122,7 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['status']; ?></td>
             <td class='center' width='100'>
 
+<<<<<<< HEAD
             <div>
             <!-- Tambahkan kode untuk menampilkan gambar -->
                 <?php
@@ -133,6 +138,37 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['createdate']; ?></td>
         </tr>
                                         <?php
+=======
+                            while ($data = mysqli_fetch_assoc($query)) { 
+                              
+                            ?>
+                          <tr>
+                                    <td width="10" class="center"><?php echo $no; ?></td>
+                                    
+                                    <td width="100"><?php echo $data['idtiket']; ?></td>
+                                    <td width="100"><?php echo $data['nama']; ?></td>
+                                     <td width="100"><?php echo $data['departemen']; ?></td>
+                                     <td width="100"><?php echo $data['email']; ?></td>
+                                     <td width="100"><?php echo $data['priority']; ?></td>
+                                      <td width="100"><?php echo $data['problem']; ?></td>
+                                      <td width="100"><?php echo $data['status']; ?></td>
+                                      <td class='center' width='100'>
+                                                    <div>
+                                                        <!-- Tambahkan kode untuk menampilkan gambar -->
+                                                        <?php
+                                                        $direktorifoto = "modules/tiket/" . $data['foto'];
+                                                        if (file_exists($direktorifoto)) {
+                                                            echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
+                                                        } else {
+                                                            echo '<span>Image not found </span>';
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </td>
+                                     <td width="100"><?php echo $data['createdate']; ?></td>
+                                </tr>
+                                <?php
+>>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
                                             $no++;
                                         }
                                         ?>

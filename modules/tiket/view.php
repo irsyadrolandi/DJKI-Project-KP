@@ -90,10 +90,17 @@
                                             <th class='center'>No</th>
                                             <th class='center'>ID-Tiket</th>
                                             <th class='center'>Nama</th>
+<<<<<<< HEAD
                                             <th class='center'>Bidang/Unit Kerja</th>
                                             <th class='center'>NIP</th>
                                             <th class='center'>Jenis Kendala</th>
                                             <th class="center">Kendala</th>
+=======
+                                            <th class='center'>Departemen</th>
+                                            <th class='center'>Email</th>
+                                            <th class='center'>Prioritas</th>
+                                            <th class="center">Jenis Kendala</th>
+>>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
                                             <th class="center">Status</th>
                                             <th class="center">Foto</th>
                                             <th class='center'>Tanggal Dibuat</th>
@@ -126,7 +133,7 @@
                                                         if (file_exists($direktorifoto)) {
                                                             echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
                                                         } else {
-                                                            echo '<span>Image not found' . $direktorifoto.'</span>';
+                                                            echo '<span>Image not found</span>';
                                                         }
                                                         ?>
                                                     </div>
