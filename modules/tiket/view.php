@@ -93,7 +93,7 @@
                                             <th class='center'>Departemen</th>
                                             <th class='center'>Email</th>
                                             <th class='center'>Prioritas</th>
-                                            <th class="center">Kendala</th>
+                                            <th class="center">Jenis Kendala</th>
                                             <th class="center">Status</th>
                                             <th class="center">Foto</th>
                                             <th class='center'>Tanggal Dibuat</th>
@@ -126,7 +126,7 @@
                                                         if (file_exists($direktorifoto)) {
                                                             echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
                                                         } else {
-                                                            echo '<span>Image not found' . $direktorifoto.'</span>';
+                                                            echo '<span>Image not found</span>';
                                                         }
                                                         ?>
                                                     </div>

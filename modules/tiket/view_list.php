@@ -92,7 +92,7 @@ elseif ($_GET['alert'] == 3) { ?>
                                         <th class='center'>Nama</th>
                                           <th class='center'>Unit Kerja</th>
                                             <th class='center'>NIP</th>
-                                              <th class='center'>Prioritas</th>
+                                              <th class='center'>Jenis Kendala</th>
                                                 <th class="center" >Kendala</th>
                                                   <th class="center" >Status</th>
                                                     <th class="center" >Foto</th>
@@ -135,7 +135,7 @@ GROUP BY idtiket DESC
                                                         if (file_exists($direktorifoto)) {
                                                             echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
                                                         } else {
-                                                            echo '<span>Image not found' . $direktorifoto.'</span>';
+                                                            echo '<span>Image not found </span>';
                                                         }
                                                         ?>
                                                     </div>
