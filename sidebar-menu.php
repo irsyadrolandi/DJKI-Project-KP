@@ -1,7 +1,7 @@
 <?php 
 
 error_reporting(0);
-
+//ini yang gua ubah
 if ($_SESSION['hak_akses']=='Super Admin'){ ?>
     <ul class="nav nav-list">
     <?php
@@ -15,6 +15,8 @@ if ($_SESSION['hak_akses']=='Super Admin'){ ?>
                     <b class="arrow"></b>
                 </li>';
     } 
+
+    
    
     else {
         echo '  <li>
