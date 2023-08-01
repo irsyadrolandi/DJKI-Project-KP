@@ -67,7 +67,7 @@ if ($_GET['form']=='add') { ?>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required></textarea>
                     <option value=""></option>
-                   		<option value="Super Admin">Admin</option>
+                   		<option value="Admin">Admin</option>
                    		<option value="STAFF">User</option>
                       	<option value="HELPDESK">Teknisi</option>
                   </select>
@@ -164,7 +164,7 @@ elseif ($_GET['form']=='edit') {
                 <div class="col-sm-5">
                   <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required>
                     <option value="<?php echo $data['hak_akses']; ?>"><?php echo $data['hak_akses']; ?></option>
-					<option value="Super Admin">Admin</option>
+					<option value="Admin">Admin</option>
                    	<option value="STAFF">User</option>
                     <option value="Teknisi">Teknisi</option>
                   </select>

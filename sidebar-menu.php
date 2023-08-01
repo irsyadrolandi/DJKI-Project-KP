@@ -2,7 +2,7 @@
 
 error_reporting(0);
 
-if ($_SESSION['hak_akses']=='Super Admin'){ ?>
+if ($_SESSION['hak_akses']=='Admin'){ ?>
     <ul class="nav nav-list">
     <?php
   

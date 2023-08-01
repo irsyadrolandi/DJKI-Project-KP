@@ -56,7 +56,7 @@ CREATE TABLE `tiket` (
   `email` varchar(100) NOT NULL,
   `problem` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `status` enum('Open','Closed') NOT NULL DEFAULT 'Open',
+  `status` enum('Open','Closed','Pending') NOT NULL DEFAULT 'Open',
   `date` date NOT NULL,
   `createdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_user` int(10) NOT NULL,
@@ -150,7 +150,7 @@ ADD COLUMN `foto` varchar(100) NOT NULL AFTER `problem`;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-UPDATE pengguna
+/*UPDATE pengguna
 SET hak_akses = 'Admin'
 WHERE hak_akses = 'Admin' OR hak_akses = 'Staff' OR hak_akses = 'Helpdesk';
 
@@ -160,4 +160,4 @@ WHERE hak_akses = 'User' OR hak_akses = 'User Lama';
 
 UPDATE pengguna
 SET hak_akses = 'Teknisi'
-WHERE hak_akses = 'Teknisi' OR hak_akses = 'Staff Baru';
+WHERE hak_akses = 'Teknisi' OR hak_akses = 'Staff Baru';*/
