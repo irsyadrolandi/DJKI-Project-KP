@@ -88,17 +88,13 @@ elseif ($_GET['alert'] == 3) { ?>
                                     <th class='center'>No</th>
                                       <th class='center'>ID-Tiket</th>
                                         <th class='center'>Nama</th>
-<<<<<<< HEAD
                                           <th class='center'>Bidang/Unit Kerja</th>
-=======
-                                          <th class='center'>Unit Kerja</th>
->>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
-                                            <th class='center'>NIP</th>
-                                              <th class='center'>Jenis Kendala</th>
-                                                <th class="center" >Kendala</th>
-                                                  <th class="center" >Status Tiket</th>
-                                                    <th class="center" >Foto</th>
-                                                        <th class='center'>Tanggal Dibuat</th>
+                                               <th class='center'>NIP</th>
+                                                  <th class='center'>Jenis Kendala</th>
+                                                      <th class="center" >Kendala</th>
+                                                          <th class="center" >Status Tiket</th>
+                                                               <th class="center" >Foto</th>
+                                                                <th class='center'>Tanggal Dibuat</th>
                                                       
                                 </tr>
                             </thead>
@@ -108,8 +104,7 @@ elseif ($_GET['alert'] == 3) { ?>
     $created_user = $_SESSION['id_user'];
     $query = mysqli_query($mysqli, "SELECT * FROM tiket where id_user='$created_user' GROUP BY idtiket DESC")
         or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
-    
-        while ($data = mysqli_fetch_assoc($query)) {       
+      
 ?>
         <tr>
             <td width="10" class="center"><?php echo $no; ?></td>
@@ -121,8 +116,8 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['problem']; ?></td>
             <td width="100"><?php echo $data['status']; ?></td>
             <td class='center' width='100'>
+        
 
-<<<<<<< HEAD
             <div>
             <!-- Tambahkan kode untuk menampilkan gambar -->
                 <?php
@@ -138,7 +133,7 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['createdate']; ?></td>
         </tr>
                                         <?php
-=======
+
                             while ($data = mysqli_fetch_assoc($query)) { 
                               
                             ?>
@@ -168,7 +163,7 @@ elseif ($_GET['alert'] == 3) { ?>
                                      <td width="100"><?php echo $data['createdate']; ?></td>
                                 </tr>
                                 <?php
->>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
+
                                             $no++;
                                         }
                                         ?>
@@ -182,4 +177,3 @@ elseif ($_GET['alert'] == 3) { ?>
         </div>
     </div>
 </div>
-
