@@ -214,73 +214,6 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
         }); 
     </script>
 
-<!-- Grafik TIKET PENDING
-    <script type="text/javascript">
-        var chart; 
-        $(document).ready(function() {
-              chart = new Highcharts.Chart(
-              {
-                  
-                 chart: {
-                    width:550,
-                    renderTo: 'mygraph3',
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                 },   
-                 title: {
-                    text: 'Tiket Pending '
-                 },
-                 tooltip: {
-                    formatter: function() {
-                        return '<b>'+
-                        this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +' % ';
-                    }
-                 },
-                 
-                 plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            color: '#000000',
-                            connectorColor: 'green',
-                            formatter: function() 
-                            {
-                                return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.percentage, 2) +' % ';
-                            }
-                        }
-                    }
-                 },
-       
-                    series: [{
-                    type: 'pie',
-                    name: 'Browser share',
-                    data: [
-                    <?php
-                        //include "connection.php";
-                        $query = mysqli_query($mysqli,"SELECT departemen
-                        FROM `grap2` GROUP BY 1");
-                     
-                        while ($row = mysqli_fetch_array($query)) {
-                            $browsername = $row['departemen'];
-                
-                            $data = mysqli_fetch_array(mysqli_query($mysqli,"SELECT total from grap2 where departemen='$browsername'"));
-                            $jumlah = $data['total'];
-                            ?>
-                            [ 
-                                '<?php echo $browsername ?>', <?php echo $jumlah; ?>
-                            ],
-                            <?php
-                        }
-                        ?>
-                    ]
-                }]
-              });
-        }); 
-    </script> -->
-
 <!-- Grafik TIKET SELESAI-->
 <script type="text/javascript">
         var chart; 
@@ -563,7 +496,7 @@ elseif ($_SESSION['hak_akses']=='HELPDESK') { ?>
             //$user= $_SESSION['id_user'];
             //$users= $_SESSION['nama_user'];
             $query = mysqli_query($mysqli, "SELECT 
-            COUNT(DISTINCT (`idtiket`)) AS tiket FROM tiket WHERE status='Closed'")
+            COUNT(DISTINCT (`idtiket`)) AS tiket FROM tiket WHERE status='Pending'")
                 or die('Ada kesalahan pada query tampil data: '.mysqli_error($mysqli));
 
                 $data = mysqli_fetch_assoc($query);

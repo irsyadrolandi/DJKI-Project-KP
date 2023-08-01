@@ -14,11 +14,11 @@ header("Content-Disposition: attachment; filename=Data.xls");
         <th class='center'>No</th>
           <th class='center'>IDtiket</th>
             <th class='center'>Nama</th>
-              <th class='center'>Departemen</th>
+              <th class='center'>Bagian/Unit Kerja</th>
                 <th class='center'>NIP</th>
-                  <th class='center'>Prioritas</th>
-                    <th class="center" >Case</th>
-                      <th class="center" >Status</th>
+                  <th class='center'>Jenis Kendala</th>
+                    <th class="center" >Kendala</th>
+                      <th class="center">Status Tiket</th>
                         <th class='center'>Tanggal Dibuat</th>
        </tr>
     </thead>

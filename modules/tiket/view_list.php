@@ -82,67 +82,57 @@ elseif ($_GET['alert'] == 3) { ?>
                     <!-- div.dataTables_borderWrap -->
                     <div>
                         <div class="row">
-
-           
-                                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                            <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th class='center'>No</th>
                                       <th class='center'>ID-Tiket</th>
                                         <th class='center'>Nama</th>
-                                          <th class='center'>Departemen</th>
-                                            <th class='center'>Email</th>
-                                              <th class='center'>Prioritas</th>
+                                          <th class='center'>Bidang/Unit Kerja</th>
+                                            <th class='center'>NIP</th>
+                                              <th class='center'>Jenis Kendala</th>
                                                 <th class="center" >Kendala</th>
-                                                  <th class="center" >Status</th>
+                                                  <th class="center" >Status Tiket</th>
                                                     <th class="center" >Foto</th>
                                                         <th class='center'>Tanggal Dibuat</th>
                                                       
                                 </tr>
                             </thead>
 
-                            <?php
-                            $no = 1;
-                            $created_user = $_SESSION['id_user'];
-                          
-                            $query = mysqli_query($mysqli, "SELECT
-  *
-FROM
-  tiket 
-   where id_user='$created_user'
-GROUP BY idtiket DESC
-")
-                                                or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
+ <?php
+    $no = 1;
+    $created_user = $_SESSION['id_user'];
+    $query = mysqli_query($mysqli, "SELECT * FROM tiket where id_user='$created_user' GROUP BY idtiket DESC")
+        or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
+    
+        while ($data = mysqli_fetch_assoc($query)) {       
+?>
+        <tr>
+            <td width="10" class="center"><?php echo $no; ?></td>
+            <td width="100"><?php echo $data['idtiket']; ?></td>
+            <td width="100"><?php echo $data['nama']; ?></td>
+            <td width="100"><?php echo $data['departemen']; ?></td>
+            <td width="100"><?php echo $data['email']; ?></td>
+            <td width="100"><?php echo $data['priority']; ?></td>
+            <td width="100"><?php echo $data['problem']; ?></td>
+            <td width="100"><?php echo $data['status']; ?></td>
+            <td class='center' width='100'>
 
-                            while ($data = mysqli_fetch_assoc($query)) { 
-                              
-                            ?>
-                          <tr>
-                                    <td width="10" class="center"><?php echo $no; ?></td>
-                                    
-                                    <td width="100"><?php echo $data['idtiket']; ?></td>
-                                    <td width="100"><?php echo $data['nama']; ?></td>
-                                     <td width="100"><?php echo $data['departemen']; ?></td>
-                                     <td width="100"><?php echo $data['email']; ?></td>
-                                     <td width="100"><?php echo $data['priority']; ?></td>
-                                      <td width="100"><?php echo $data['problem']; ?></td>
-                                      <td width="100"><?php echo $data['status']; ?></td>
-                                      <td class='center' width='100'>
-                                                    <div>
-                                                        <!-- Tambahkan kode untuk menampilkan gambar -->
-                                                        <?php
-                                                        $direktorifoto = "modules/tiket/" . $data['foto'];
-                                                        if (file_exists($direktorifoto)) {
-                                                            echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
-                                                        } else {
-                                                            echo '<span>Image not found' . $direktorifoto.'</span>';
-                                                        }
-                                                        ?>
-                                                    </div>
-                                                </td>
-                                     <td width="100"><?php echo $data['createdate']; ?></td>
-                                </tr>
-                                <?php
+            <div>
+            <!-- Tambahkan kode untuk menampilkan gambar -->
+                <?php
+                $direktorifoto = "modules/tiket/" . $data['foto'];
+                if (file_exists($direktorifoto)) {
+                    echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
+                } else {
+                    echo '<span>Image not found' . $direktorifoto.'</span>';
+                }
+                ?>
+            </div>
+            </td>
+            <td width="100"><?php echo $data['createdate']; ?></td>
+        </tr>
+                                        <?php
                                             $no++;
                                         }
                                         ?>

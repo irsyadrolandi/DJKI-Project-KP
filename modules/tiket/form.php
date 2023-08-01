@@ -71,7 +71,7 @@ if ($_GET['form'] == 'add') {
           <div class="form-group">
             <label class="col-sm-2 control-label">Nama</label>
             <div class="col-sm-5">
-              <input type="textclass="form-control" name="nama" autocomplete="off" value="<?php echo $data['nama_user']; ?>" required></textarea>
+              <input type= textclass form-control name="nama" autocomplete="off" value="<?php echo $data['nama_user']; ?>" required></textarea>
             </div>
           </div>
 
@@ -172,7 +172,7 @@ elseif ($_GET['form'] == 'edit') {
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Departemen</label>
+            <label class="col-sm-2 control-label">Bidang/Unit Kerja</label>
             <div class="col-sm-5">
               <input type="text" class="form-control" name="departemen" autocomplete="off" value="<?php echo $data['departemen']; ?>"readonly>
             </div>
@@ -198,10 +198,9 @@ elseif ($_GET['form'] == 'edit') {
           </div>
 
                <div class="form-group">
-                <label class="col-sm-2 control-label">Status</label>
+                <label class="col-sm-2 control-label">Status Tiket</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-                    <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
 
                    <option value="Open">OPEN</option>
                    <option value="Pending">PENDING</option>
@@ -211,7 +210,7 @@ elseif ($_GET['form'] == 'edit') {
               </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Problem</label>
+            <label class="col-sm-2 control-label">Kendala</label>
             <div class="col-sm-5">
               <input type="text" class="form-control" name="problem" autocomplete="off" value="<?php echo $data['problem']; ?>" readonly>
             </div>

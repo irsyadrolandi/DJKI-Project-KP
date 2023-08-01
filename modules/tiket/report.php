@@ -25,7 +25,7 @@
       <div class="col-xs-5">
         <div class="box box-primary">
           <!-- form start -->
-          <form role="form" class="form-horizontal" action="modules/tiket/cetak.php" method="GET" enctype="multipart/form-data" />
+          <form role="form" class="form-horizontal" action="modules/tiket/cetak.php" method="GET" enctype="multipart/form-data">
           
             <div class="box-body">
               
@@ -74,21 +74,15 @@
                                 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                     <th class='center'>No</th>
+                                    <th class='center'>No</th>
                                     <th class='center'>ID-Tiket</th>
                                     <th class='center'>Nama</th>
-                                     <th class='center'>Departemen</th>
-                                     <th class='center'>Email</th>
-                                       <th class='center'>Prioritas</th>
-
-                                       <th class="center" >Kendala</th>
-                                        <th class="center" >Status</th>
-                                      
-                                        <th class='center'>Tanggal Dibuat</th>
-                                  
-                                   
-                                    
-                            
+                                    <th class='center'>Bidang/Unit Kerja</th>
+                                    <th class='center'>NIP</th>
+                                    <th class='center'>Jenis Kendala</th>
+                                    <th class="center" >Kendala</th>
+                                    <th class="center" >Status Tiket</th>
+                                    <th class='center'>Tanggal Dibuat</th>
                                 </tr>
                             </thead>
 
@@ -98,13 +92,8 @@
                             $no = 1;
                           
                           
-                            $query = mysqli_query($mysqli, "SELECT
-  *
-FROM
-  tiket
-GROUP BY idtiket DESC
-")
-                                                or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
+                            $query = mysqli_query($mysqli, "SELECT * FROM tiket GROUP BY idtiket DESC")
+                                        or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
 
                                                
                             while ($data = mysqli_fetch_assoc($query)) { 
@@ -114,20 +103,14 @@ GROUP BY idtiket DESC
                                     
                                     <td width="100"><?php echo $data['idtiket']; ?></td>
                                     <td width="100"><?php echo $data['nama']; ?></td>
-                                     <td width="100"><?php echo $data['departemen']; ?></td>
-                                     <td width="100"><?php echo $data['email']; ?></td>
-                                     <td width="100"><?php echo $data['prioritas']; ?></td>
-                                      <td width="100"><?php echo $data['problem']; ?></td>
-                                      <td width="100" style="background:<?php echo $warna; ?>">
+                                    <td width="100"><?php echo $data['departemen']; ?></td>
+                                    <td width="100"><?php echo $data['email']; ?></td>
+                                    <td width="100"><?php echo $data['prioritas']; ?></td>
+                                    <td width="100"><?php echo $data['problem']; ?></td>
+                                    <td width="100" style="background:<?php echo $warna; ?>">
                                     <?php echo $data['status']; ?></td>
-
                                      
-                                     <td width="100"><?php echo $data['createdate']; ?></td>
-                                 
-                                        
-
-                               
-                                    
+                                    <td width="100"><?php echo $data['createdate']; ?></td>
                                         </div>
                                         </div>
                                     </td>

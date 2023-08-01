@@ -90,9 +90,9 @@
                                             <th class='center'>No</th>
                                             <th class='center'>ID-Tiket</th>
                                             <th class='center'>Nama</th>
-                                            <th class='center'>Departemen</th>
-                                            <th class='center'>Email</th>
-                                            <th class='center'>Prioritas</th>
+                                            <th class='center'>Bidang/Unit Kerja</th>
+                                            <th class='center'>NIP</th>
+                                            <th class='center'>Jenis Kendala</th>
                                             <th class="center">Kendala</th>
                                             <th class="center">Status</th>
                                             <th class="center">Foto</th>
