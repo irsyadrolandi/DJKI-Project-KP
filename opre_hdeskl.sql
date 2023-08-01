@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 05:40 AM
+-- Generation Time: Aug 01, 2023 at 04:28 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 -- (See below for the actual view)
 --
 CREATE TABLE `grap` (
-`departemen` varchar(100),
-`total` bigint(21)
+`departemen` varchar(100)
+,`total` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -39,8 +39,8 @@ CREATE TABLE `grap` (
 -- (See below for the actual view)
 --
 CREATE TABLE `grap2` (
-`departemen` varchar(100),
-`total` bigint(21)
+`departemen` varchar(100)
+,`total` bigint(21)
 );
 
 -- --------------------------------------------------------
@@ -66,6 +66,16 @@ CREATE TABLE `tiket` (
   `solveby` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `tiket`
+--
+
+INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
+('TKT-2023-000001', 'user', 'yeti', '12-34578', 'wetfood habis', 'assets/uploads/Timmy.png', 'Open', '2023-07-31', '2023-07-31 11:59:08', 277, '2023-07-31 11:59:08', 0, 'High', 0),
+('TKT-2023-000002', 'permeongan', 'tinky', '54321', 'snack habis', 'assets/uploads/Screenshot (3).png', 'Closed', '2023-07-31', '2023-07-31 12:01:17', 277, '2023-07-31 12:01:17', 0, 'MEDIUM', 0),
+('TKT-2023-000003', 'user', 'lili', '123456', 'banyak', 'assets/uploads/Screenshot 2023-03-16 214325.png', 'Open', '2023-07-31', '2023-07-31 15:22:46', 277, '2023-07-31 15:22:46', 0, 'MEDIUM', 0),
+('TKT-2023-000004', 'wleowleo', 'gery', '09876', 'gatel', 'assets/uploads/Screenshot 2023-03-16 210214.png', 'Pending', '2023-07-31', '2023-07-31 15:25:33', 277, '2023-07-31 15:25:33', 0, 'High', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -80,7 +90,7 @@ CREATE TABLE `user` (
   `departemen` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telepon` varchar(13) NOT NULL,
-  `hak_akses` enum('Super Admin','STAFF','HELPDESK') NOT NULL,
+  `hak_akses` enum('Admin','User','Teknisi') NOT NULL,
   `status` enum('aktif','blokir') NOT NULL DEFAULT 'aktif',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -91,10 +101,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `departemen`, `email`, `telepon`, `hak_akses`, `status`, `created_at`, `updated_at`) VALUES
-(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', 'Super Admin', 'aktif', '2023-06-22 01:12:14', '2023-06-22 01:12:14'),
-(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:16', '2023-06-22 03:37:16'),
-(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:48', '2023-06-22 03:37:48'),
-(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', '', '', '', 'Super Admin', 'aktif', '2023-06-22 03:38:25', '2023-06-22 03:38:25');
+(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', '', 'aktif', '2023-06-22 01:12:14', '2023-06-22 01:12:14'),
+(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', '', 'aktif', '2023-06-22 03:37:16', '2023-06-22 03:37:16'),
+(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', '', 'aktif', '2023-06-22 03:37:48', '2023-06-22 03:37:48'),
+(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', 'admin', '', '', '', 'aktif', '2023-06-22 03:38:25', '2023-07-31 11:56:40'),
+(277, 'yeti', 'yeti', '202cb962ac59075b964b07152d234b70', 'user', '', '', '', 'aktif', '2023-07-31 11:57:11', '2023-07-31 11:57:11'),
+(278, 'tinky', 'tinky', '202cb962ac59075b964b07152d234b70', 'meong', '', '', '', 'aktif', '2023-07-31 11:57:32', '2023-07-31 15:51:25');
 
 -- --------------------------------------------------------
 
@@ -139,25 +151,9 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
+  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 COMMIT;
-
--- Adding the new column `foto` to the `tiket` table
-ALTER TABLE `tiket`
-ADD COLUMN `foto` varchar(100) NOT NULL AFTER `problem`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-/*UPDATE pengguna
-SET hak_akses = 'Admin'
-WHERE hak_akses = 'Admin' OR hak_akses = 'Staff' OR hak_akses = 'Helpdesk';
-
-UPDATE pengguna
-SET hak_akses = 'User'
-WHERE hak_akses = 'User' OR hak_akses = 'User Lama';
-
-UPDATE pengguna
-SET hak_akses = 'Teknisi'
-WHERE hak_akses = 'Teknisi' OR hak_akses = 'Staff Baru';*/
