@@ -83,16 +83,62 @@ if ($_GET['form'] == 'add') {
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Prioritas Kendala</label>
-            <div class="col-sm-5">
-              <select class="chosen-select" name="prio" data-placeholder="-- Pilih --" autocomplete="On">
-                <option value=""></option>
-                <option value="High">High</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="STANDART">Standart</option>
-              </select>
-            </div>
-          </div>
+  <label class="col-sm-2 control-label">Jenis Kendala</label>
+  <div class="col-sm-5">
+    <select class="dropdown" name="jenis_kendala" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+      <option value=""></option>
+      <option value="HARDWARE">HARDWARE</option>
+      <option value="SOFTWARE">SOFTWARE</option>
+      <option value="JARINGAN">JARINGAN</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label">Kendala</label>
+  <div class="col-sm-5">
+    <select class="chosen-select" name="kendala" id="kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+      <option value=""></option>
+    </select>
+  </div>
+</div>
+
+<script>
+  // Ambil elemen select untuk "Jenis Kendala" dan "Kendala"
+  const jenisKendalaSelect = document.getElementById('jenis_kendala');
+  const kendalaSelect = document.getElementById('kendala');
+
+  // Fungsi untuk mengatur opsi di form "Kendala" berdasarkan pilihan di form "Jenis Kendala"
+  function updateKendalaOptions() {
+    // Hapus semua opsi pada form "Kendala" kecuali opsi default
+    kendalaSelect.innerHTML = '<option value=""></option>';
+
+    // Ambil nilai yang dipilih pada form "Jenis Kendala"
+    const jenisKendalaValue = jenisKendalaSelect.value;
+
+    // Tambahkan opsi baru di form "Kendala" sesuai dengan pilihan pada form "Jenis Kendala"
+    if (jenisKendalaValue === 'HARDWARE') {
+      kendalaSelect.add(new Option('PC', 'High'));
+      kendalaSelect.add(new Option('Laptop', 'High'));
+      kendalaSelect.add(new Option('Printer', 'High'));
+    } else if (jenisKendalaValue === 'SOFTWARE') {
+      kendalaSelect.add(new Option('Office', 'Medium'));
+      kendalaSelect.add(new Option('Wifi', 'Medium'));
+    } else if (jenisKendalaValue === 'JARINGAN') {
+      kendalaSelect.add(new Option('Kabel LAN', 'Low'));
+    }
+
+    // Refresh tampilan select dengan library Chosen
+    // Jika Anda tidak menggunakan library Chosen, baris berikut dapat dihapus
+    $(kendalaSelect).trigger('chosen:updated');
+  }
+
+  // Tambahkan event listener untuk memanggil fungsi saat pilihan pada form "Jenis Kendala" berubah
+  jenisKendalaSelect.addEventListener('change', updateKendalaOptions);
+
+  // Panggil fungsi saat halaman pertama kali dimuat untuk mengatur opsi berdasarkan nilai default
+  updateKendalaOptions();
+</script>
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Kendala</label>
@@ -186,23 +232,63 @@ elseif ($_GET['form'] == 'edit') {
           </div>
 
           <div class="form-group">
-            <label class="col-sm-2 control-label">Priority Case</label>
-            <div class="col-sm-5">
-              <select class="chosen-select" name="prio" data-placeholder="-- Pilih --" autocomplete="On" disabled>
-                <option value="<?php echo $data['priority']; ?>"><?php echo $data['priority']; ?></option>
-                <option value="High">HIGH</option>
-                <option value="MEDIUM">MEDIUM</option>
-                <option value="STANDART">STANDART</option>
-              </select>
-            </div>
-          </div>
+  <label class="col-sm-2 control-label">Jenis Kendala</label>
+  <div class="col-sm-5">
+    <select class="chosen-select" name="jenis_kendala" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+      <option value=""></option>
+      <option value="HARDWARE">HARDWARE</option>
+      <option value="SOFTWARE">SOFTWARE</option>
+      <option value="JARINGAN">JARINGAN</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label">Kendala</label>
+  <div class="col-sm-5">
+    <select class="chosen-select" name="kendala" id="kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+      <option value=""></option>
+    </select>
+  </div>
+</div>
+
+<script>
+  // Ambil elemen select untuk "Jenis Kendala" dan "Kendala"
+  const jenisKendalaSelect = document.getElementById('jenis_kendala');
+  const kendalaSelect = document.getElementById('kendala');
+
+  // Fungsi untuk mengatur opsi di form "Kendala" berdasarkan pilihan di form "Jenis Kendala"
+  function updateKendalaOptions() {
+    // Hapus semua opsi pada form "Kendala" kecuali opsi default
+    while (kendalaSelect.options.length > 1) {
+      kendalaSelect.remove(1);
+    }
+
+    // Ambil nilai yang dipilih pada form "Jenis Kendala"
+    const jenisKendalaValue = jenisKendalaSelect.value;
+
+    // Tambahkan opsi baru di form "Kendala" sesuai dengan pilihan pada form "Jenis Kendala"
+    if (jenisKendalaValue === 'HARDWARE') {
+      kendalaSelect.add(new Option('High', 'High'));
+    } else if (jenisKendalaValue === 'SOFTWARE') {
+      kendalaSelect.add(new Option('Medium', 'Medium'));
+    } else if (jenisKendalaValue === 'JARINGAN') {
+      kendalaSelect.add(new Option('Low', 'Low'));
+    }
+  }
+
+  // Tambahkan event listener untuk memanggil fungsi saat pilihan pada form "Jenis Kendala" berubah
+  jenisKendalaSelect.addEventListener('change', updateKendalaOptions);
+
+  // Panggil fungsi saat halaman pertama kali dimuat untuk mengatur opsi berdasarkan nilai default
+  updateKendalaOptions();
+</script>
+
 
                <div class="form-group">
                 <label class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-                    <option value="<?php echo $data['status'];?>"><?php echo $data['status'];?></option>
-
                    <option value="Open">OPEN</option>
                    <option value="Pending">PENDING</option>
                     <option value="closed">CLOSED</option>  
