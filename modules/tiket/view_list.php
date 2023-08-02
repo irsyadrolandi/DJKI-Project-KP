@@ -92,6 +92,8 @@ elseif ($_GET['alert'] == 3) { ?>
                                                <th class='center'>NIP</th>
                                                   <th class='center'>Jenis Kendala</th>
                                                       <th class="center" >Kendala</th>
+                                                        <th class="center" >Teknisi</th>
+                                                        <th class="center" >Keterangan Teknisi</th>
                                                           <th class="center" >Status Tiket</th>
                                                                <th class="center" >Foto</th>
                                                                 <th class='center'>Tanggal Dibuat</th>
@@ -114,6 +116,8 @@ elseif ($_GET['alert'] == 3) { ?>
             <td width="100"><?php echo $data['email']; ?></td>
             <td width="100"><?php echo $data['priority']; ?></td>
             <td width="100"><?php echo $data['problem']; ?></td>
+            <td width="100"><?php echo $data['teknisi']; ?></td>
+            <td width="100"><?php echo $data['keteranganteknisi']; ?></td>
             <td width="100"><?php echo $data['status']; ?></td>
             <td class='center' width='100'>
                                                     <div>

@@ -143,7 +143,21 @@ if ($_GET['form'] == 'add') {
           <div class="form-group">
             <label class="col-sm-2 control-label">Kendala</label>
             <div class="col-sm-5">
-              <textarea row="2" class="form-control" name="problem" autocomplete="off" value="<?php echo $data['email']; ?>" required></textarea>
+              <textarea row="2" class="form-control" name="problem" autocomplete="off" value="<?php echo $data['prio']; ?>" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Teknisi</label>
+            <div class="col-sm-5">
+            <input type="text" class="form-control" name="teknisi" value="<?php echo $data['teknisi']; ?>" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Keterangan Teknisi</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="keteranganteknisi" value="<?php echo $data['keteranganteknisi']; ?>">
             </div>
           </div>
 
@@ -187,6 +201,8 @@ elseif ($_GET['form'] == 'edit') {
   }
 
   ?>
+
+
 <!-- tampilan form edit data -->
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -232,36 +248,44 @@ elseif ($_GET['form'] == 'edit') {
           </div>
 
           <div class="form-group">
-  <label class="col-sm-2 control-label">Jenis Kendala</label>
-  <div class="col-sm-5">
-    <select class="select1" name="prio" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" disabled>
-      <option value=""></option>
-      <option value="HARDWARE">HARDWARE</option>
-      <option value="SOFTWARE">SOFTWARE</option>
-      <option value="JARINGAN">JARINGAN</option>
-    </select>
-  </div>
-</div>
+            <label class="col-sm-2 control-label">Jenis Kendala</label>
+          <div class="col-sm-5">
+            <select class="select1" name="prio" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" disabled>
+              <option value=""></option>
+              <option value="HARDWARE">HARDWARE</option>
+              <option value="SOFTWARE">SOFTWARE</option>
+              <option value="JARINGAN">JARINGAN</option>
+            </select>
+          </div>
+          </div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label"></label>
-  <div class="col-sm-5">
-    <select class="chosen-select" name="prio" id="kendala" data-placeholder="-- Pilih --" autocomplete="On" disabled>
-      <option value="<?php echo $data['priority']; ?>"><?php echo $data['priority']; ?></option>
-    </select>
-  </div>
-</div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+          <div class="col-sm-5">
+            <select class="chosen-select" name="prio" id="kendala" data-placeholder="-- Pilih --" autocomplete="On" disabled>
+              <option value="<?php echo $data['priority']; ?>"><?php echo $data['priority']; ?></option>
+            </select>
+          </div>
+          </div>
 
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Teknisi</label>
+            <div class="col-sm-5">
+            <input type="text" class="form-control" name="teknisi" value="<?php echo $data['teknisi']; ?>" >
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Keterangan Teknisi</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="keteranganteknisi" value="<?php echo $data['keteranganteknisi']; ?>">
+            </div>
+          </div>
 
                <div class="form-group">
                 <label class="col-sm-2 control-label">Status Tiket</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-<<<<<<< HEAD
-
-=======
->>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
                    <option value="Open">OPEN</option>
                    <option value="Pending">PENDING</option>
                     <option value="closed">CLOSED</option>  

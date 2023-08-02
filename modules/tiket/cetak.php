@@ -18,6 +18,8 @@ header("Content-Disposition: attachment; filename=Data.xls");
                 <th class='center'>NIP</th>
                   <th class='center'>Jenis Kendala</th>
                     <th class="center" >Kendala</th>
+                      <th class="center" >Teknisi</th>
+                      <th class="center" >Keterangan Teknisi</th>
                       <th class="center">Status Tiket</th>
                         <th class='center'>Tanggal Dibuat</th>
        </tr>
@@ -49,6 +51,8 @@ GROUP BY idtiket DESC
                 <td width="100"><?php echo $data['priority']; ?></td>
                   <td width="100"><?php echo $data['problem']; ?></td>
                     <td width="100"><?php echo $data['foto']; ?></td>
+                      <td width="100"><?php echo $data['teknisi']; ?></td>
+                      <td width="100"><?php echo $data['keteranganteknisi']; ?></td>
                       <td width="100" style="background:<?php echo $warna; ?>">
       <?php echo $data['status']; ?></td>
         <td width="100"><?php echo $data['createdate']; ?></td>

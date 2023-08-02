@@ -17,6 +17,8 @@ else {
             $email = mysqli_real_escape_string($mysqli, trim($_POST['email']));
             $case = mysqli_real_escape_string($mysqli, trim($_POST['problem']));
             $prio = mysqli_real_escape_string($mysqli, trim($_POST['prio']));
+            $teknisi = mysqli_real_escape_string($mysqli, trim($_POST['teknisi']));
+            $keteranganteknisi = mysqli_real_escape_string($mysqli, trim($_POST['keteranganteknisi']));
             $tanggal = mysqli_real_escape_string($mysqli, trim($_POST['tanggal']));
             $id_user = $_SESSION['id_user'];
 
@@ -46,8 +48,8 @@ if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
 
             // ...
 
-            $query = mysqli_query($mysqli, "INSERT INTO tiket (idtiket, departemen, nama, email, priority, problem, id_user, date, foto)
-                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$case', '$id_user', '$tanggal', '$direktoriFoto')")
+            $query = mysqli_query($mysqli, "INSERT INTO tiket (idtiket, departemen, nama, email, priority, teknisi, keteranganteknisi, problem, id_user, date, foto)
+                                            VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$teknisi', '$keteranganteknisi', '$case', '$id_user', '$tanggal', '$direktoriFoto')")
                 or die('Ada kesalahan pada query insert: ' . mysqli_error($mysqli));
 
             // ...
@@ -81,6 +83,8 @@ if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
                 $case = mysqli_real_escape_string($mysqli, trim($_POST['problem']));
                 $prio = mysqli_real_escape_string($mysqli, trim($_POST['prio']));
                 $problem = mysqli_real_escape_string($mysqli, trim($_POST['problem']));
+                $teknisi = mysqli_real_escape_string($mysqli, trim($_POST['teknisi']));
+                $keteranganteknisi = mysqli_real_escape_string($mysqli, trim($_POST['keteranganteknisi']));
                 $status = mysqli_real_escape_string($mysqli, trim($_POST['status_tiket']));
 
                 $query = mysqli_query($mysqli, "UPDATE tiket SET status               = '$status',
