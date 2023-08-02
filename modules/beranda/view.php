@@ -260,13 +260,13 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
                     data: [
                     <?php
                         //include "connection.php";
-                        $query = mysqli_query($mysqli,"SELECT departemen
+                        $query = mysqli_query($mysqli,"SELECT priority
                         FROM `grap2` GROUP BY 1");
                      
                         while ($row = mysqli_fetch_array($query)) {
-                            $browsername = $row['departemen'];
+                            $browsername = $row['priority'];
                 
-                            $data = mysqli_fetch_array(mysqli_query($mysqli,"SELECT total from grap2 where departemen='$browsername'"));
+                            $data = mysqli_fetch_array(mysqli_query($mysqli,"SELECT total from grap2 where priority='$browsername'"));
                             $jumlah = $data['total'];
                             ?>
                             [ 

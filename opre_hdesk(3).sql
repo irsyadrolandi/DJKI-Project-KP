@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 06:41 AM
+-- Generation Time: Aug 02, 2023 at 06:25 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,7 @@ CREATE TABLE `grap` (
 -- (See below for the actual view)
 --
 CREATE TABLE `grap2` (
-`departemen` varchar(100)
+`priority` varchar(100)
 ,`total` bigint(21)
 );
 
@@ -71,7 +71,7 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
-('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Open', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0);
+('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Closed', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0);
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `grap2`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap2`  AS   (select `a`.`departemen` AS `departemen`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Closed' group by 1)  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `grap2`  AS   (select `a`.`priority` AS `priority`,count(`a`.`status`) AS `total` from `tiket` `a` where `a`.`status` = 'Closed' group by 1)  ;
 
 --
 -- Indexes for dumped tables
