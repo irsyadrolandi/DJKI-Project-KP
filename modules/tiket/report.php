@@ -105,7 +105,7 @@
                                     <td width="100"><?php echo $data['nama']; ?></td>
                                     <td width="100"><?php echo $data['departemen']; ?></td>
                                     <td width="100"><?php echo $data['email']; ?></td>
-                                    <td width="100"><?php echo $data['prioritas']; ?></td>
+                                    <td width="100"><?php echo $data['priority']; ?></td>
                                     <td width="100"><?php echo $data['problem']; ?></td>
                                     <td width="100" style="background:<?php echo $warna; ?>">
                                     <?php echo $data['status']; ?></td>
