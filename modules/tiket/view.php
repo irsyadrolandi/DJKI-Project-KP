@@ -40,6 +40,10 @@
                 List Tiket berhasil diubah.
                 <br>
             </div>
+            <audio autoplay>
+                <source src="modules/tiket/alert_bell.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+             </audio>
         <?php
         }
         
@@ -120,16 +124,16 @@
                                                 <?php echo $data['status']; ?></td>
                                                 <td class='center' width='100'>
                                                 <div>
-                                                        <!-- Tambahkan kode untuk menampilkan gambar -->
-                                                        <?php
+                                                    <!-- Tambahkan kode untuk menampilkan gambar -->
+                                                    <?php
                                                         $direktorifoto = "modules/tiket/" . $data['foto'];
-                                                        if (file_exists($direktorifoto)) {
-                                                            echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
-                                                        } else {
-                                                            echo '<span>Image not found</span>';
-                                                        }
-                                                        ?>
-                                                    </div>
+                                                            if (empty($data['foto']) || !file_exists($direktorifoto)) {
+                                                                echo '<span>Image not found</span>';
+                                                            } else {
+                                                                echo '<a data-toggle="tooltip" data-placement="top" title="Lihat Foto" style="margin-right:5px" class="btn btn-primary btn-sm" href="' . $direktorifoto . '" id="">Lihat Foto</a>';
+                                                            }
+                                                    ?>
+                                                </div>
                                                 </td>
                                                 <td width="100"><?php echo $data['createdate']; ?></td>
                                                 <td class='center' width='30'>

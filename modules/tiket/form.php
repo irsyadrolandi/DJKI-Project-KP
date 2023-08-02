@@ -121,6 +121,8 @@ if ($_GET['form'] == 'add') {
       kendalaSelect.add(new Option('PC', 'PC'));
       kendalaSelect.add(new Option('Laptop', 'Laptop'));
       kendalaSelect.add(new Option('Printer', 'Printer'));
+      kendalaSelect.add(new Option('Scanner', 'Scanner'));
+      kendalaSelect.add(new Option('--Lainnya--', 'Lainnya'));
     } else if (jenisKendalaValue === 'SOFTWARE') {
       kendalaSelect.add(new Option('Office', 'Office'));
       kendalaSelect.add(new Option('Wifi', 'Wifi'));
@@ -147,12 +149,23 @@ if ($_GET['form'] == 'add') {
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Foto</label>
-            <div class="col-sm-5">
-              <input type="file" name="foto" class="form-control" required></textarea>
-            </div>
-          </div>
+          <style>
+    /* Gaya untuk teks "Optional" */
+    .teks-optional {
+        font-size: 11px;
+        color: #d14;
+        font-style: italic;
+    }
+</style>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label">Foto</label>
+    <div class="col-sm-5">
+        <input type="file" name="foto" multiple class="form-control">
+        <!-- Tambahkan teks "Optional" dengan menggunakan kelas "teks-optional" -->
+        <p class="teks-optional">*Optional</p>
+    </div>
+</div>
 
           <!-- /.box body -->
 
@@ -258,10 +271,6 @@ elseif ($_GET['form'] == 'edit') {
                 <label class="col-sm-2 control-label">Status Tiket</label>
                 <div class="col-sm-5">
                   <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-<<<<<<< HEAD
-
-=======
->>>>>>> 173e3252f4e7c16917cd3855175d015f69488130
                    <option value="Open">OPEN</option>
                    <option value="Pending">PENDING</option>
                     <option value="closed">CLOSED</option>  
