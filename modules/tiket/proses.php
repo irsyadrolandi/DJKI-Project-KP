@@ -5,9 +5,7 @@ require_once "../../config/database.php";
 
 if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
     echo "<meta http-equiv='refresh' content='0; url=index.php?alert=1'>";
-}
-// jika user sudah login, maka jalankan perintah untuk insert, update, dan delete
-else {
+} else {
     if ($_GET['act'] == 'insert') {
         if (isset($_POST['simpan'])) {
             // ambil data hasil submit dari form
@@ -22,49 +20,37 @@ else {
             $tanggal = mysqli_real_escape_string($mysqli, trim($_POST['tanggal']));
             $id_user = $_SESSION['id_user'];
 
-         // Proses upload foto
-$direktorifoto = "assets/uploads/";
+            // Proses upload foto jika ada foto yang diunggah
+            $foto = $_FILES['foto']['name'];
+            if (!empty($foto)) {
+                $direktorifoto = "assets/uploads/";
+                if (!is_dir($direktorifoto)) {
+                    mkdir($direktorifoto, 0777, true);
+                }
 
-// Mengecek apakah direktori sudah ada
-if (!is_dir($direktorifoto)) {
-    //Membuat direktori jika belum ada
-    mkdir($direktorifoto, 0777, true);
-}
+                $foto_tmp = $_FILES['foto']['tmp_name'];
+                $direktoriFoto = $direktorifoto . $foto;
+                $file_extension = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
 
-$foto = $_FILES['foto']['name'];
-$foto_tmp = $_FILES['foto']['tmp_name'];
-$direktoriFoto = $direktorifoto . $foto;
-
-// Mendapatkan informasi ekstensi file
-$file_extension = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
-
-// Mengecek apakah file foto berhasil diupload dan ekstensinya valid
-if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
-    if (in_array($file_extension, array('jpg', 'jpeg', 'png'))) {
-        // Move uploaded file to destination directory with the original name
-        if (move_uploaded_file($foto_tmp, $direktoriFoto)) {
-            // Set izin tulis pada direktori foto
-            chmod($direktoriFoto, 0777);
-
-            // ...
+                if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+                    if (in_array($file_extension, array('jpg', 'jpeg', 'png'))) {
+                        if (move_uploaded_file($foto_tmp, $direktoriFoto)) {
+                            chmod($direktoriFoto, 0777);
+                        } else {
+                            echo "Gagal mengupload file foto.";
+                        }
+                    } else {
+                        echo "Ekstensi file tidak valid. Hanya file JPG, JPEG, dan PNG yang diizinkan.";
+                    }
+                } else {
+                    echo "Terjadi kesalahan dalam upload foto: " . $_FILES['foto']['error'];
+                    exit;
+                }
+            }
 
             $query = mysqli_query($mysqli, "INSERT INTO tiket (idtiket, departemen, nama, email, priority, teknisi, keteranganteknisi, problem, id_user, date, foto)
                                             VALUES ('$idtiket', '$departemen', '$nama', '$email', '$prio', '$teknisi', '$keteranganteknisi', '$case', '$id_user', '$tanggal', '$direktoriFoto')")
                 or die('Ada kesalahan pada query insert: ' . mysqli_error($mysqli));
-
-            // ...
-        } else {
-            echo "Gagal mengupload file foto.";
-        }
-    } else {
-        echo "Ekstensi file tidak valid. Hanya file JPG, JPEG, dan PNG yang diizinkan.";
-    }
-} else {
-    echo "Terjadi kesalahan dalam upload foto: " . $_FILES['foto']['error'];
-    exit;
-}
-
-
 
             // cek query
             if ($query) {
@@ -87,22 +73,49 @@ if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
                 $keteranganteknisi = mysqli_real_escape_string($mysqli, trim($_POST['keteranganteknisi']));
                 $status = mysqli_real_escape_string($mysqli, trim($_POST['status_tiket']));
 
-                $query = mysqli_query($mysqli, "UPDATE tiket SET status               = '$status',
-                updateuser           = '$id_user', 
-                solveby              = '$id_user'     
-                                                            
-               WHERE idtiket                   = '$idtiket'")
-               or die('Ada kesalahan pada query update : '.mysqli_error($mysqli));
+                // Proses upload foto jika ada foto yang diunggah
+                $foto = $_FILES['foto']['name'];
+                if (!empty($foto)) {
+                    $direktorifoto = "assets/uploads/";
+                    if (!is_dir($direktorifoto)) {
+                        mkdir($direktorifoto, 0777, true);
+                    }
 
-           // cek query
-           if ($query) {
-               // jika berhasil tampilkan pesan berhasil update data
-               header("location: ../../main.php?module=tiket&alert=2");
-           }
-       }
-     
-}
-}
-}
+                    $foto_tmp = $_FILES['foto']['tmp_name'];
+                    $direktoriFoto = $direktorifoto . $foto;
+                    $file_extension = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
 
+                    if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+                        if (in_array($file_extension, array('jpg', 'jpeg', 'png'))) {
+                            if (move_uploaded_file($foto_tmp, $direktoriFoto)) {
+                                chmod($direktoriFoto, 0777);
+                            } else {
+                                echo "Gagal mengupload file foto.";
+                            }
+                        } else {
+                            echo "Ekstensi file tidak valid. Hanya file JPG, JPEG, dan PNG yang diizinkan.";
+                        }
+                    } else {
+                        echo "Terjadi kesalahan dalam upload foto: " . $_FILES['foto']['error'];
+                        exit;
+                    }
+                }
+
+                // Proses update data ke dalam database
+                $query = mysqli_query($mysqli, "UPDATE tiket SET status = '$status',
+                                                            updateuser = '$id_user', 
+                                                            solveby = '$id_user',
+                                                            foto = '$direktoriFoto'
+               WHERE idtiket = '$idtiket'")
+                    or die('Ada kesalahan pada query update : ' . mysqli_error($mysqli));
+
+                // cek query
+                if ($query) {
+                    // jika berhasil tampilkan pesan berhasil update data
+                    header("location: ../../main.php?module=tiket&alert=2");
+                }
+            }
+        }
+    }
+}
 ?>
