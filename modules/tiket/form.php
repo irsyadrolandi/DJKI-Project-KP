@@ -85,7 +85,7 @@ if ($_GET['form'] == 'add') {
           <div class="form-group">
   <label class="col-sm-2 control-label">Jenis Kendala</label>
   <div class="col-sm-5">
-    <select class="select1" name="prio" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+    <select class="" name="prio" id="jenis_kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
       <option value=""></option>
       <option value="HARDWARE">HARDWARE</option>
       <option value="SOFTWARE">SOFTWARE</option>
@@ -97,7 +97,7 @@ if ($_GET['form'] == 'add') {
 <div class="form-group">
   <label class="col-sm-2 control-label"></label>
   <div class="col-sm-5">
-    <select class="chosen-select" name="prio" id="kendala" data-placeholder="-- Pilih --" autocomplete="On" required>
+    <select class="chosen-select" name="prio" id="kendala" form-control data-placeholder="-- Pilih --" autocomplete="On" multiple required>
       <option value=""></option>
     </select>
   </div>
@@ -126,8 +126,10 @@ if ($_GET['form'] == 'add') {
     } else if (jenisKendalaValue === 'SOFTWARE') {
       kendalaSelect.add(new Option('Office', 'Office'));
       kendalaSelect.add(new Option('Wifi', 'Wifi'));
+      kendalaSelect.add(new Option('--Lainnya--', '--Lainnya--'));
     } else if (jenisKendalaValue === 'JARINGAN') {
       kendalaSelect.add(new Option('Kabel LAN', 'Kabel'));
+      kendalaSelect.add(new Option('--Lainnya--', '--Lainnya--'));
     }
 
     // Refresh tampilan select dengan library Chosen

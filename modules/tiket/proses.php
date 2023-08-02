@@ -86,7 +86,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
                     $file_extension = strtolower(pathinfo($foto, PATHINFO_EXTENSION));
 
                     if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
-                        if (in_array($file_extension, array('jpg', 'jpeg', 'png'))) {
+                        if (in_array($file_extension, array('jpg', 'jpeg', 'png', 'pdf'))) {
                             if (move_uploaded_file($foto_tmp, $direktoriFoto)) {
                                 chmod($direktoriFoto, 0777);
                             } else {

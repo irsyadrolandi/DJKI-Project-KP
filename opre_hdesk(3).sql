@@ -3,11 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<<< HEAD:opre_hdesk (3).sql
 -- Generation Time: Aug 02, 2023 at 08:15 AM
-========
 -- Generation Time: Aug 02, 2023 at 06:25 AM
->>>>>>>> 0c90cb80cd335a27e55c9ec2823ab01c868a518b:opre_hdesk(3).sql
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -75,17 +72,12 @@ CREATE TABLE `tiket` (
 --
 -- Dumping data for table `tiket`
 --
-
-<<<<<<<< HEAD:opre_hdesk (3).sql
 INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`, `teknisi`, `keteranganteknisi`) VALUES
-('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Open', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0, '', ''),
 ('TKT-2023-000002', 'ti', 'user 1', '12345', 'blablabla', 'assets/uploads/Timmy.png', 'Open', '2023-08-02', '2023-08-02 03:12:44', 277, '2023-08-02 03:12:44', 0, 'PC', 0, '', ''),
 ('TKT-2023-000003', 'meow', 'user 2', '09876', 'mledag', 'assets/uploads/Screenshot (3).png', 'Open', '2023-08-02', '2023-08-02 03:13:33', 277, '2023-08-02 03:13:33', 0, 'Wifi', 0, '', ''),
 ('TKT-2023-000004', 'wleoloe', 'user 3', '654321', 'asdfghjkl', 'assets/uploads/Screenshot 2023-03-16 214325.png', 'Open', '2023-08-02', '2023-08-02 03:14:11', 277, '2023-08-02 03:14:11', 0, 'Kabel', 0, '', '');
-========
 INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
 ('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Closed', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0);
->>>>>>>> 0c90cb80cd335a27e55c9ec2823ab01c868a518b:opre_hdesk(3).sql
 
 -- --------------------------------------------------------
 
