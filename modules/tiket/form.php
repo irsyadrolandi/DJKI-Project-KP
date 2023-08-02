@@ -154,14 +154,14 @@ if ($_GET['form'] == 'add') {
           <div class="form-group">
             <label class="col-sm-2 control-label">Teknisi</label>
             <div class="col-sm-5">
-            <input type="text" class="form-control" name="teknisi" value="<?php echo $data['teknisi']; ?>" >
+            <input type="text" class="form-control" name="teknisi" value="<?php echo $data['teknisi']; ?>" disabled >
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Keterangan Teknisi</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="keteranganteknisi" value="<?php echo $data['keteranganteknisi']; ?>">
+              <input type="text" class="form-control" name="keteranganteknisi" value="<?php echo $data['keteranganteknisi']; ?>" disabled>
             </div>
           </div>
 
