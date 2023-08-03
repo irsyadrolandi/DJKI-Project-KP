@@ -286,27 +286,33 @@ elseif ($_GET['form'] == 'edit') {
           <div class="form-group">
             <label class="col-sm-2 control-label">Teknisi</label>
             <div class="col-sm-5">
-            <input type="text" class="form-control" name="teknisi" value="<?php echo $data['teknisi']; ?>" >
+            <input type="text" class="form-control" name="teknisi" id="teknisi" autocomplete="Off" required>
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Keterangan Teknisi</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="keteranganteknisi" value="<?php echo $data['keteranganteknisi']; ?>">
+              <input type="text" class="form-control" name="keteranganteknisi" id="keteranganteknisi" autocomplete="Off">
             </div>
           </div>
 
-               <div class="form-group">
-                <label class="col-sm-2 control-label">Status Tiket</label>
-                <div class="col-sm-5">
-                  <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
-                   <option value="Open">OPEN</option>
-                   <option value="Pending">PENDING</option>
-                    <option value="closed">CLOSED</option>  
-                  </select>
-                </div>
-              </div>
+          <div class="form-group">
+    <label class="col-sm-2 control-label">Status Tiket</label>
+    <div class="col-sm-5">
+        <select class="chosen-select" name="status_tiket" data-placeholder="-- Pilih --" autocomplete="On">
+            <?php
+            $statusOptions = array("Open", "Pending", "Closed");
+            foreach ($statusOptions as $option) {
+                // Jika nilai saat ini sama dengan opsi, tandai sebagai selected
+                $selected = ($data['status'] === $option) ? 'selected' : '';
+                echo "<option value='$option' $selected>$option</option>";
+            }
+            ?>
+        </select>
+    </div>
+</div>
+
 
           <div class="form-group">
             <label class="col-sm-2 control-label">Kendala</label>
@@ -318,7 +324,7 @@ elseif ($_GET['form'] == 'edit') {
           <div class="form-group">
     <label class="col-sm-2 control-label">Foto</label>
     <div class="col-sm-5">
-        <input type="file" class="form-control" name="foto" id="foto" <?php echo !empty($data['foto']) ? : 'required'; ?>>
+        <input type="file" class="form-control" name="foto" id="foto" <?php echo !empty($data['foto']) ; ?>>
         <?php if (!empty($data['foto'])) { ?>
             <p class="help-block">File foto saat ini: <?php echo $data['foto']; ?></p>
         <?php } ?>

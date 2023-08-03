@@ -105,7 +105,10 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
                 $query = mysqli_query($mysqli, "UPDATE tiket SET status = '$status',
                                                             updateuser = '$id_user', 
                                                             solveby = '$id_user',
+                                                            teknisi = '$teknisi',
+                                                            keteranganteknisi = '$keteranganteknisi',
                                                             foto = '$direktoriFoto'
+
                WHERE idtiket = '$idtiket'")
                     or die('Ada kesalahan pada query update : ' . mysqli_error($mysqli));
 
