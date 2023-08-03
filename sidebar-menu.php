@@ -2,7 +2,7 @@
 
 error_reporting(0);
 //ini yang gua ubah
-if ($_SESSION['hak_akses']=='Super Admin'){ ?>
+if ($_SESSION['hak_akses']=='Admin'){ ?>
     <ul class="nav nav-list">
     <?php
   
@@ -97,7 +97,7 @@ if ($_SESSION['hak_akses']=='Super Admin'){ ?>
 
     <?php
 }
-elseif ($_SESSION['hak_akses']=='STAFF'){ ?>
+elseif ($_SESSION['hak_akses']=='USER'){ ?>
     <ul class="nav nav-list">
     <?php
   
@@ -148,7 +148,7 @@ elseif ($_SESSION['hak_akses']=='STAFF'){ ?>
 
     <?php
 }
-if ($_SESSION['hak_akses']=='HELPDESK'){ ?>
+if ($_SESSION['hak_akses']=='TEKNISI'){ ?>
     <ul class="nav nav-list">
     <?php
   

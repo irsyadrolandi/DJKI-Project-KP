@@ -68,8 +68,8 @@ if ($_GET['form']=='add') { ?>
                   <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required></textarea>
                     <option value=""></option>
                    		<option value="Admin">Admin</option>
-                   		<option value="STAFF">User</option>
-                      	<option value="HELPDESK">Teknisi</option>
+                   		<option value="USER">User</option>
+                      	<option value="TEKNISI">Teknisi</option>
                   </select>
                 </div>
               </div>
@@ -165,8 +165,8 @@ elseif ($_GET['form']=='edit') {
                   <select class="chosen-select" name="hak_akses" data-placeholder="-- Pilih Tipe --" autocomplete="off" required>
                     <option value="<?php echo $data['hak_akses']; ?>"><?php echo $data['hak_akses']; ?></option>
 					<option value="Admin">Admin</option>
-                   	<option value="STAFF">User</option>
-                    <option value="Teknisi">Teknisi</option>
+                   	<option value="USER">User</option>
+                    <option value="TEKNISI">Teknisi</option>
                   </select>
                 </div>
               </div>

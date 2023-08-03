@@ -96,11 +96,11 @@ elseif ($_GET['alert'] == 3) { ?>
                                                <th class='center'>NIP</th>
                                                   <th class='center'>Jenis Kendala</th>
                                                       <th class="center" >Kendala</th>
-                                                        <th class="center" >Teknisi</th>
-                                                        <th class="center" >Keterangan Teknisi</th>
-                                                          <th class="center" >Status Tiket</th>
-                                                               <th class="center" >Foto</th>
-                                                                <th class='center'>Tanggal Dibuat</th>
+                                                            <th class="center" >Teknisi</th>
+                                                                <th class="center" >Keterangan Teknisi</th>
+                                                                    <th class="center" >Status Tiket</th>
+                                                                        <th class="center" >Foto</th>
+                                                                            <th class='center'>Tanggal Dibuat</th>
                                                       
                                 </tr>
                             </thead>

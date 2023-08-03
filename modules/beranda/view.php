@@ -10,7 +10,7 @@ error_reporting(0);
     </div><!-- /.page-header -->
     <div class="row">
     <?php
-if ($_SESSION['hak_akses']=='Super Admin') { ?>
+if ($_SESSION['hak_akses']=='Admin') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">
@@ -310,7 +310,7 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
     <?php
 }
 
-elseif ($_SESSION['hak_akses']=='STAFF') { ?>
+elseif ($_SESSION['hak_akses']=='USER') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">
@@ -447,7 +447,7 @@ elseif ($_SESSION['hak_akses']=='STAFF') { ?>
     <?php
 }
 
-elseif ($_SESSION['hak_akses']=='HELPDESK') { ?>
+elseif ($_SESSION['hak_akses']=='TEKNISI') { ?>
 <div class="col-xs-12">
             <!-- PAGE CONTENT BEGINS -->
             <div class="alert alert-block alert-success">

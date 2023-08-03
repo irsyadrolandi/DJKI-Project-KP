@@ -98,30 +98,25 @@
                                         or die('Ada kesalahan pada query tampil Data: '.mysqli_error($mysqli));
 
                                                
-                            while ($data = mysqli_fetch_assoc($query)) { 
-                               
-                            ?>
-                          <td width="10" class="center"><?php echo $no; ?></td>
-                                    
-                                    <td width="100"><?php echo $data['idtiket']; ?></td>
-                                    <td width="100"><?php echo $data['nama']; ?></td>
-                                    <td width="100"><?php echo $data['departemen']; ?></td>
-                                    <td width="100"><?php echo $data['email']; ?></td>
-                                    <td width="100"><?php echo $data['priority']; ?></td>
-                                    <td width="100"><?php echo $data['problem']; ?></td>
-                                    <td width="100"><?php echo $data['teknisi']; ?></td>
-                                    <td width="100"><?php echo $data['keteranganteknisi']; ?></td>
-                                    <td width="100" style="background:<?php echo $warna; ?>">
-                                    <?php echo $data['status']; ?></td>
-                                     
-                                    <td width="100"><?php echo $data['createdate']; ?></td>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            <?php
-                                $no++;
-                            } ?>
+                                        while ($data = mysqli_fetch_assoc($query)) { 
+                                            ?>
+                                            <tr>
+                                                <td width="10" class="center"><?php echo $no; ?></td>
+                                                <td width="100"><?php echo $data['idtiket']; ?></td>
+                                                <td width="100"><?php echo $data['nama']; ?></td>
+                                                <td width="100"><?php echo $data['departemen']; ?></td>
+                                                <td width="100"><?php echo $data['email']; ?></td>
+                                                <td width="100"><?php echo $data['priority']; ?></td>
+                                                <td width="100"><?php echo $data['problem']; ?></td>
+                                                <td width="100"><?php echo $data['teknisi']; ?></td>
+                                                <td width="100"><?php echo $data['keteranganteknisi']; ?></td>
+                                                <td width="100" style="background:<?php echo $warna; ?>"><?php echo $data['status']; ?></td>
+                                                <td width="100"><?php echo $data['createdate']; ?></td>
+                                            </tr>
+                                            <?php
+                                                $no++;
+                                            }
+                                            ?>
                             </tbody>
                         </table>
                     
