@@ -3,8 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2023 at 08:15 AM
--- Generation Time: Aug 02, 2023 at 06:25 AM
+-- Generation Time: Aug 03, 2023 at 06:08 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -72,12 +71,12 @@ CREATE TABLE `tiket` (
 --
 -- Dumping data for table `tiket`
 --
-INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`, `teknisi`, `keteranganteknisi`) VALUES
-('TKT-2023-000002', 'ti', 'user 1', '12345', 'blablabla', 'assets/uploads/Timmy.png', 'Open', '2023-08-02', '2023-08-02 03:12:44', 277, '2023-08-02 03:12:44', 0, 'PC', 0, '', ''),
-('TKT-2023-000003', 'meow', 'user 2', '09876', 'mledag', 'assets/uploads/Screenshot (3).png', 'Open', '2023-08-02', '2023-08-02 03:13:33', 277, '2023-08-02 03:13:33', 0, 'Wifi', 0, '', ''),
-('TKT-2023-000004', 'wleoloe', 'user 3', '654321', 'asdfghjkl', 'assets/uploads/Screenshot 2023-03-16 214325.png', 'Open', '2023-08-02', '2023-08-02 03:14:11', 277, '2023-08-02 03:14:11', 0, 'Kabel', 0, '', '');
-INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
-('TKT-2023-000001', 'mahasiswa', 'user', 'sdadsasd', 'sadsadasd', 'assets/uploads/bola logam.jpg', 'Closed', '2023-07-31', '2023-07-31 10:56:58', 277, '2023-07-31 10:56:58', 0, 'High', 0);
+
+INSERT INTO `tiket` (`idtiket`, `departemen`, `nama`, `email`, `problem`, `teknisi`, `keteranganteknisi`, `foto`, `status`, `date`, `createdate`, `id_user`, `updatedate`, `updateuser`, `priority`, `solveby`) VALUES
+('TKT-2023-000002', 'ti', 'user 1', '12345', 'blablabla', '', '', 'assets/uploads/Timmy.png', 'Open', '2023-08-02', '2023-08-02 03:12:44', 277, '2023-08-02 03:12:44', 0, 'PC', 0),
+('TKT-2023-000003', 'meow', 'user 2', '09876', 'mledag', '', '', 'assets/uploads/Screenshot (3).png', 'Open', '2023-08-02', '2023-08-02 03:13:33', 277, '2023-08-02 03:13:33', 0, 'Wifi', 0),
+('TKT-2023-000004', 'wleoloe', 'user 3', '654321', 'asdfghjkl', '', '', 'assets/uploads/Screenshot 2023-03-16 214325.png', 'Open', '2023-08-02', '2023-08-02 03:14:11', 277, '2023-08-02 03:14:11', 0, 'Kabel', 0),
+('TKT-2023-000005', 'informatika', 'rolandi', '21120122222', 'laptop error', '', '', 'assets/uploads/bola logam.jpg', 'Closed', '2023-08-03', '2023-08-03 03:04:48', 277, '2023-08-03 03:04:48', 0, 'Laptop', 0);
 
 -- --------------------------------------------------------
 
@@ -93,7 +92,7 @@ CREATE TABLE `user` (
   `departemen` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telepon` varchar(13) NOT NULL,
-  `hak_akses` enum('Super Admin','STAFF','HELPDESK') NOT NULL,
+  `hak_akses` enum('Admin','USER','TEKNISI') NOT NULL,
   `status` enum('aktif','blokir') NOT NULL DEFAULT 'aktif',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -104,11 +103,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `nama_user`, `password`, `departemen`, `email`, `telepon`, `hak_akses`, `status`, `created_at`, `updated_at`) VALUES
-(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', 'Super Admin', 'aktif', '2023-06-22 01:12:14', '2023-06-22 01:12:14'),
-(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:16', '2023-06-22 03:37:16'),
-(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', 'HELPDESK', 'aktif', '2023-06-22 03:37:48', '2023-06-22 03:37:48'),
-(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', '', '', '', 'Super Admin', 'aktif', '2023-06-22 03:38:25', '2023-06-22 03:38:25'),
-(277, 'user', 'user', '202cb962ac59075b964b07152d234b70', 'mahasiswa', '', '', 'STAFF', 'aktif', '2023-07-28 10:16:34', '2023-07-28 10:16:34');
+(272, 'irsyad', 'irsyad', '5647b8b060c2f2c9f5608e77f1aecd12', '', '', '', 'Admin', 'aktif', '2023-06-22 01:12:14', '2023-08-03 04:03:42'),
+(274, 'dhea', 'dhea fareza', '1c1d655f0a880b9a577db312cf702e2a', '', '', '', 'TEKNISI', 'aktif', '2023-06-22 03:37:16', '2023-08-03 04:03:57'),
+(275, 'abida', 'abida amalia', '39f6c4b3068b36053ddd7439b36463f8', '', '', '', 'TEKNISI', 'aktif', '2023-06-22 03:37:48', '2023-08-03 04:04:27'),
+(276, 'fito', 'alfito priananda', 'c56d61aa8107f2922b5045df029c4422', '', '', '', 'Admin', 'aktif', '2023-06-22 03:38:25', '2023-08-03 04:04:36'),
+(277, 'user', 'user', '202cb962ac59075b964b07152d234b70', 'mahasiswa', '', '', 'USER', 'aktif', '2023-07-28 10:16:34', '2023-08-03 04:04:45'),
+(278, 'user1', 'dadada', '81dc9bdb52d04dc20036dbd8313ed055', 'it', '', '', 'USER', 'aktif', '2023-08-03 03:50:14', '2023-08-03 04:04:53'),
+(279, 'supriganteng', 'iii', '202cb962ac59075b964b07152d234b70', 'Investor', '', '', 'USER', 'aktif', '2023-08-03 04:06:30', '2023-08-03 04:06:30');
 
 -- --------------------------------------------------------
 
@@ -153,7 +154,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
+  MODIFY `id_user` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
